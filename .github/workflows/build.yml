@@ -34,32 +34,45 @@ jobs:
           New-Item -ItemType Directory -Force -Path bin\win
           Invoke-WebRequest -Uri "https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe" -OutFile "bin\win\yt-dlp.exe"
 
-      - name: Build & Publish Windows Executable
-        run: npm run publish:win
+      - name: Build Windows Executable & Portable Targets
+        run: npm run publish:win -- --win nsis zip --publish never
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Prepare Binary Artifact
+      - name: Prepare Binary Artifacts
         shell: pwsh
         run: |
           $VERSION = node -p "require('./package.json').version"
+          $targetDir = "build"
+          if (!(Test-Path $targetDir)) { New-Item -ItemType Directory -Path $targetDir -Force }
           
-          # Locates the compiled application exe
-          $exeFile = Get-ChildItem -Recurse -Filter *.exe | Where-Object { $_.FullName -notlike "*bin\win*" -and $_.FullName -notlike "*node_modules*" } | Select-Object -First 1
-          
+          # 1. Locate and stage the NSIS Installer (.exe)
+          $exeFile = Get-ChildItem -Path dist -Filter "*.exe" | Where-Object { $_.Name -notlike "*uninstaller*" } | Select-Object -First 1
           if ($exeFile) {
-              $targetDir = "build"
-              if (!(Test-Path $targetDir)) { New-Item -ItemType Directory -Path $targetDir -Force }
-              
-              $targetPath = "$targetDir\BeatWave-v$VERSION-Windows.exe"
-              Copy-Item -Path $exeFile.FullName -Destination $targetPath -Force
-              Write-Output "Successfully staged: BeatWave-v$VERSION-Windows.exe"
+              Copy-Item -Path $exeFile.FullName -Destination "$targetDir\BeatWave-v$VERSION-Windows-Setup.exe" -Force
+              Write-Output "Staged Installer: BeatWave-v$VERSION-Windows-Setup.exe"
           } else {
-              Write-Error "No target application executable was compiled!"
+              Write-Error "Installer executable not found!"
               exit 1
           }
+          
+          # 2. Locate and stage the Portable Zip bundle (.zip)
+          $zipFile = Get-ChildItem -Path dist -Filter "*.zip" | Select-Object -First 1
+          if ($zipFile) {
+              Copy-Item -Path $zipFile.FullName -Destination "$targetDir\BeatWave-v$VERSION-Windows-Portable.zip" -Force
+              Write-Output "Staged Portable Zip: BeatWave-v$VERSION-Windows-Portable.zip"
+          } else {
+              # Fallback: Zip the unpacked directory if explicit zip target didn't compress
+              if (Test-Path "dist\win-unpacked") {
+                  Compress-Archive -Path "dist\win-unpacked\*" -DestinationPath "$targetDir\BeatWave-v$VERSION-Windows-Portable.zip" -Force
+                  Write-Output "Compressed win-unpacked folder into Portable Zip bundle."
+              } else {
+                  Write-Error "Portable zip target or unpacked contents could not be found!"
+                  exit 1
+              }
+          }
 
-      - name: Upload Build Artifact to GitHub
+      - name: Upload Build Artifacts to GitHub
         uses: actions/upload-artifact@v4
         with:
           name: BeatWave-Windows-Build
