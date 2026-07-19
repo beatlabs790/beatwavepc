@@ -35,7 +35,7 @@ function register(ipcMain, ctx) {
       const tag = version.startsWith('v') ? version : `v${version}`;
       const https = require('https');
       const body = await new Promise((resolve, reject) => {
-        const req = https.get(`https://api.github.com/repos/nyakuoff/Snowify/releases/tags/${tag}`, { headers: { 'User-Agent': 'Snowify', 'Accept': 'application/vnd.github+json' } }, (res) => {
+        const req = https.get(`https://api.github.com/repos/beatlabs790/BEATWAVEPC/releases/tags/${tag}`, { headers: { 'User-Agent': 'Snowify', 'Accept': 'application/vnd.github+json' } }, (res) => {
           let data = '';
           res.on('data', chunk => data += chunk);
           res.on('end', () => res.statusCode === 200 ? resolve(data) : reject(new Error(`GitHub API ${res.statusCode}`)));
@@ -52,7 +52,7 @@ function register(ipcMain, ctx) {
     try {
       const https = require('https');
       const body = await new Promise((resolve, reject) => {
-        const req = https.get('https://api.github.com/repos/nyakuoff/Snowify/releases?per_page=20', { headers: { 'User-Agent': 'Snowify', 'Accept': 'application/vnd.github+json' } }, (res) => {
+        const req = https.get('https://api.github.com/repos/beatlabs790/BEATWAVEPC/releases?per_page=20', { headers: { 'User-Agent': 'Snowify', 'Accept': 'application/vnd.github+json' } }, (res) => {
           let data = '';
           res.on('data', chunk => data += chunk);
           res.on('end', () => res.statusCode === 200 ? resolve(data) : reject(new Error(`GitHub API ${res.statusCode}`)));

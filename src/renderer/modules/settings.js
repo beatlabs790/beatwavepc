@@ -792,7 +792,7 @@ export async function initSettings() {
   $('#btn-open-changelog').addEventListener('click', async () => {
     openChangelog(await window.snowify.getVersion());
   });
-  $('#btn-discord-server').addEventListener('click', () => { window.snowify.openExternal('https://discord.gg/JHDZraE5TD'); });
+  $('#btn-discord-server').addEventListener('click', () => { window.snowify.openExternal('https://discord.gg/spbuDTePSR');   });
 
   // Show changelog after update
   (async () => {

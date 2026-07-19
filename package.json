@@ -1,6 +1,6 @@
 {
-  "name": "snowify",
-  "version": "2.0.0",
+  "name": "beatwavepc",
+  "version": "1.0.0",
   "description": "A Spotify-like desktop music player that streams from free sources",
   "main": "src/main.js",
   "scripts": {
@@ -57,9 +57,9 @@
     "icon": "assets/logo.png",
     "protocols": [
       {
-        "name": "Snowify",
+        "name": "BeatWavePC",
         "schemes": [
-          "snowify"
+          "beatwavepc"
         ]
       }
     ],
@@ -111,8 +111,8 @@
     ],
     "publish": {
       "provider": "github",
-      "owner": "nyakuoff",
-      "repo": "Snowify"
+      "owner": "beatlabs790",
+      "repo": "BeatWavePC"
     }
   }
 }
