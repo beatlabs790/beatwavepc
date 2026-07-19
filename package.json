@@ -52,8 +52,8 @@
     "ytmusic-api": "^5.3.1"
   },
   "build": {
-    "appId": "com.nyaku.snowify",
-    "productName": "Snowify",
+    "appId": "com.nyaku.beatwavepc",
+    "productName": "BeatWave PC",
     "icon": "assets/logo.png",
     "protocols": [
       {
@@ -70,7 +70,7 @@
       "category": "Audio",
       "icon": "assets/logo.png",
       "mimeTypes": [
-        "x-scheme-handler/snowify"
+        "x-scheme-handler/beatwavepc"
       ],
       "extraResources": [
         {
@@ -87,6 +87,7 @@
         "nsis"
       ],
       "icon": "assets/logo.ico",
+      "verifyUpdateIcon": false,
       "extraResources": [
         {
           "from": "bin/win",
