@@ -1,6 +1,9 @@
 name: Build BeatWave PC v1
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       prerelease:
@@ -61,10 +64,13 @@ jobs:
         run: |
           VERSION=$(node -p "require('./package.json').version")
           
+          # Check if triggered by push or manual workflow dispatch
+          IS_PRERELEASE=${{ github.event.inputs.prerelease || 'false' }}
+          
           gh release create "v${VERSION}" \
             --title "BeatWave PC v${VERSION}" \
             --draft=false \
-            --prerelease=${{ github.event.inputs.prerelease }} \
+            --prerelease=$IS_PRERELEASE \
             "build/BeatWave-v${VERSION}-Windows.exe" --clobber
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
