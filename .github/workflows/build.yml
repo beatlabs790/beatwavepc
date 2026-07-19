@@ -34,16 +34,8 @@ jobs:
           New-Item -ItemType Directory -Force -Path bin\win
           Invoke-WebRequest -Uri "https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe" -OutFile "bin\win\yt-dlp.exe"
 
-      - name: Prune Development Dependencies
-        run: npm prune --production
-
-      - name: Build Optimized Small-Size Targets
-        run: |
-          npm run publish:win -- --win nsis zip --publish never `
-          -c.asar=true `
-          -c.asarUnpack="**/bin/win/yt-dlp.exe" `
-          -c.nsis.compression="lzma" `
-          -c.nsis.solid=true
+      - name: Build Windows Targets Normal
+        run: npm run publish:win -- --win nsis zip --publish never
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -54,7 +46,7 @@ jobs:
           $targetDir = "build"
           if (!(Test-Path $targetDir)) { New-Item -ItemType Directory -Path $targetDir -Force }
           
-          # 1. Locate and stage the compressed NSIS Installer (.exe)
+          # 1. Locate and stage the NSIS Installer (.exe)
           $exeFile = Get-ChildItem -Path dist -Filter "*.exe" | Where-Object { $_.Name -notlike "*uninstaller*" } | Select-Object -First 1
           if ($exeFile) {
               Copy-Item -Path $exeFile.FullName -Destination "$targetDir\BeatWave-v$VERSION-Windows-Setup.exe" -Force
@@ -71,8 +63,8 @@ jobs:
               Write-Output "Staged Portable Zip: BeatWave-v$VERSION-Windows-Portable.zip"
           } else {
               if (Test-Path "dist\win-unpacked") {
-                  Compress-Archive -Path "dist\win-unpacked\*" -DestinationPath "$targetDir\BeatWave-v$VERSION-Windows-Portable.zip" -CompressionLevel Optimal -Force
-                  Write-Output "Compressed win-unpacked folder into optimal Portable Zip bundle."
+                  Compress-Archive -Path "dist\win-unpacked\*" -DestinationPath "$targetDir\BeatWave-v$VERSION-Windows-Portable.zip" -Force
+                  Write-Output "Compressed win-unpacked folder into Portable Zip bundle."
               } else {
                   Write-Error "Portable zip target or unpacked contents could not be found!"
                   exit 1
