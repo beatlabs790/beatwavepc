@@ -39,15 +39,16 @@ jobs:
       - name: Prepare and Upload Binary Artifact
         shell: pwsh
         run: |
-          # Grabs the compiled version from your package.json
           $VERSION = node -p "require('./package.json').version"
           
-          # Locates the newly compiled .exe file (adjust directory depth if your package bundler outputs elsewhere)
+          # Locates the compiled application exe
           $exeFile = Get-ChildItem -Recurse -Filter *.exe | Where-Object { $_.FullName -notlike "*bin\win*" -and $_.FullName -notlike "*node_modules*" } | Select-Object -First 1
           
           if ($exeFile) {
-              $targetPath = "build\BeatWave-v$VERSION-Windows.exe"
-              Ensure-Path (Split-Path $targetPath)
+              $targetDir = "build"
+              if (!(Test-Path $targetDir)) { New-Item -ItemType Directory -Path $targetDir -Force }
+              
+              $targetPath = "$targetDir\BeatWave-v$VERSION-Windows.exe"
               Copy-Item -Path $exeFile.FullName -Destination $targetPath -Force
               Write-Output "Successfully staged: BeatWave-v$VERSION-Windows.exe"
           } else {
@@ -60,11 +61,10 @@ jobs:
         run: |
           VERSION=$(node -p "require('./package.json').version")
           
-          # Create or edit release title and asset attachment
           gh release create "v${VERSION}" \
             --title "BeatWave PC v${VERSION}" \
             --draft=false \
-            --prerelease=${{ inputs.prerelease }} \
+            --prerelease=${{ github.event.inputs.prerelease }} \
             "build/BeatWave-v${VERSION}-Windows.exe" --clobber
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
