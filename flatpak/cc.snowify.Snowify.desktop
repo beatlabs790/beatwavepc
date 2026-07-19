@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Snowify
+Name=BeatWavePC
 Comment=A desktop music player that streams from free sources
 Exec=snowify %u
 Icon=cc.snowify.Snowify

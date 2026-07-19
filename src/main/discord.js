@@ -49,8 +49,8 @@ function register(ipcMain) {
         startTimestamp: data.startTimestamp ? new Date(data.startTimestamp) : undefined,
         endTimestamp: data.endTimestamp ? new Date(data.endTimestamp) : undefined,
         buttons: [
-          { label: 'Get Snowify', url: 'https://snowify.cc' },
-          ...(data.videoId ? [{ label: 'Listen on Snowify', url: `https://snowify.cc/track/${data.videoId}` }] : [])
+          { label: 'Get beatwavepc', url: 'https://beatwavepc.vercel.app' },
+          ...(data.videoId ? [{ label: 'Listen on BeatWavePC', url: `https://beatwavepc.vercel.app/track/${data.videoId}` }] : [])
         ],
         instance: false
       });
