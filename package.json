@@ -87,7 +87,7 @@
         "nsis"
       ],
       "icon": "assets/logo.ico",
-      "verifyUpdateIcon": false,
+      "signAndEditExecutable": false,
       "extraResources": [
         {
           "from": "bin/win",
