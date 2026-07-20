@@ -2,7 +2,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'cc.snowify.app',
-  appName: 'Snowify',
+  appName: 'BeatWavepc',
   webDir: 'src/renderer',
   android: {
     path: 'android',
