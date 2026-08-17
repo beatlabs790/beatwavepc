@@ -3,10 +3,10 @@ import 'dart:async';
 import 'package:audio_service/audio_service.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:Bloomee/blocs/media_player/bloomee_player_cubit.dart';
-import 'package:Bloomee/core/models/exported.dart' hide MediaItem;
-import 'package:Bloomee/core/adapters/track_adapter.dart';
-import 'package:Bloomee/services/player/player_engine.dart';
+import 'package:beatwave/blocs/media_player/bloomee_player_cubit.dart';
+import 'package:beatwave/core/models/exported.dart' hide MediaItem;
+import 'package:beatwave/core/adapters/track_adapter.dart';
+import 'package:beatwave/services/player/player_engine.dart';
 import 'package:rxdart/rxdart.dart';
 
 // ─── State ───────────────────────────────────────────────────────────────────

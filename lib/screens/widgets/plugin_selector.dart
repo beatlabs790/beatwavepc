@@ -1,8 +1,8 @@
-import 'package:Bloomee/core/theme/app_theme.dart';
-import 'package:Bloomee/plugins/blocs/plugin/plugin_bloc.dart';
-import 'package:Bloomee/plugins/blocs/plugin/plugin_state.dart';
-import 'package:Bloomee/src/rust/api/plugin/plugin_info.dart';
-import 'package:Bloomee/src/rust/api/plugin/types.dart';
+import 'package:beatwave/core/theme/app_theme.dart';
+import 'package:beatwave/plugins/blocs/plugin/plugin_bloc.dart';
+import 'package:beatwave/plugins/blocs/plugin/plugin_state.dart';
+import 'package:beatwave/src/rust/api/plugin/plugin_info.dart';
+import 'package:beatwave/src/rust/api/plugin/types.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

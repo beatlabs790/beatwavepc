@@ -2,19 +2,19 @@ import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:Bloomee/core/models/exported.dart';
-import 'package:Bloomee/core/theme/app_theme.dart';
-import 'package:Bloomee/screens/widgets/snackbar.dart';
-import 'package:Bloomee/services/db/global_db.dart';
-import 'package:Bloomee/services/db/db_provider.dart';
-import 'package:Bloomee/services/db/dao/playlist_dao.dart';
-import 'package:Bloomee/services/db/legacy/legacy_media_id_mapper.dart';
-import 'package:Bloomee/services/db/dao/track_dao.dart';
-import 'package:Bloomee/services/m3u_processor.dart';
-import 'package:Bloomee/services/storage_backup_service.dart';
+import 'package:beatwave/core/models/exported.dart';
+import 'package:beatwave/core/theme/app_theme.dart';
+import 'package:beatwave/screens/widgets/snackbar.dart';
+import 'package:beatwave/services/db/global_db.dart';
+import 'package:beatwave/services/db/db_provider.dart';
+import 'package:beatwave/services/db/dao/playlist_dao.dart';
+import 'package:beatwave/services/db/legacy/legacy_media_id_mapper.dart';
+import 'package:beatwave/services/db/dao/track_dao.dart';
+import 'package:beatwave/services/m3u_processor.dart';
+import 'package:beatwave/services/storage_backup_service.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:Bloomee/l10n/app_localizations.dart';
+import 'package:beatwave/l10n/app_localizations.dart';
 
 /// Service for importing and exporting playlists and tracks.
 ///

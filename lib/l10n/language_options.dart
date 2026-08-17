@@ -1,4 +1,4 @@
-import 'package:Bloomee/l10n/app_localizations.dart';
+import 'package:beatwave/l10n/app_localizations.dart';
 
 class LanguageOption {
   final String code;

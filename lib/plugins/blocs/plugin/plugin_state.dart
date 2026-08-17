@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:Bloomee/src/rust/api/plugin/plugin_info.dart';
-import 'package:Bloomee/src/rust/api/plugin/types.dart';
+import 'package:beatwave/src/rust/api/plugin/plugin_info.dart';
+import 'package:beatwave/src/rust/api/plugin/types.dart';
 
 enum PluginOperation {
   loading,

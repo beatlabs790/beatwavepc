@@ -1,11 +1,11 @@
 import 'dart:async';
 import 'dart:developer';
-import 'package:Bloomee/services/db/dao/search_history_dao.dart';
-import 'package:Bloomee/services/db/dao/settings_dao.dart';
-import 'package:Bloomee/services/plugin/plugin_service.dart';
-import 'package:Bloomee/core/constants/setting_keys.dart';
-import 'package:Bloomee/src/rust/api/plugin/commands.dart';
-import 'package:Bloomee/src/rust/api/plugin/models.dart' as plugin_models;
+import 'package:beatwave/services/db/dao/search_history_dao.dart';
+import 'package:beatwave/services/db/dao/settings_dao.dart';
+import 'package:beatwave/services/plugin/plugin_service.dart';
+import 'package:beatwave/core/constants/setting_keys.dart';
+import 'package:beatwave/src/rust/api/plugin/commands.dart';
+import 'package:beatwave/src/rust/api/plugin/models.dart' as plugin_models;
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:rxdart/rxdart.dart';

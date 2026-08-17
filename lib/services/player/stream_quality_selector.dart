@@ -1,4 +1,4 @@
-import 'package:Bloomee/core/models/exported.dart';
+import 'package:beatwave/core/models/exported.dart';
 
 enum AudioStreamQualityPreference {
   low,

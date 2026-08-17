@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:Bloomee/core/models/exported.dart';
+import 'package:beatwave/core/models/exported.dart';
 import 'package:equatable/equatable.dart';
 // Re-export mapper function for convenience.
-export 'package:Bloomee/services/db/mappers/playlist_mapper.dart'
+export 'package:beatwave/services/db/mappers/playlist_mapper.dart'
     show playlistDBToPlaylist;
 
 enum PlaylistType { userPlaylist, album, artist, remotePlaylist }

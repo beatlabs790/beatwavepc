@@ -1,5 +1,5 @@
-import 'package:Bloomee/services/db/global_db.dart';
-import 'package:Bloomee/services/db/dao/settings_dao.dart';
+import 'package:beatwave/services/db/global_db.dart';
+import 'package:beatwave/services/db/dao/settings_dao.dart';
 
 /// Repository for application settings (string and boolean key-value pairs).
 ///

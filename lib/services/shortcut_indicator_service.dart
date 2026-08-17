@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:Bloomee/services/player/player_engine.dart';
+import 'package:beatwave/services/player/player_engine.dart';
 
 /// Types of shortcut indicators that can be displayed
 enum ShortcutIndicatorType {

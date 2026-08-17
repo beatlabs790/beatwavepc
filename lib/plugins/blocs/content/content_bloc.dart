@@ -4,17 +4,17 @@ import 'dart:developer';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rxdart/rxdart.dart';
 
-import 'package:Bloomee/core/di/service_locator.dart';
-import 'package:Bloomee/core/events/global_event_bus.dart';
-import 'package:Bloomee/core/models/exported.dart';
-import 'package:Bloomee/plugins/blocs/content/content_event.dart';
-import 'package:Bloomee/plugins/blocs/content/content_state.dart';
-import 'package:Bloomee/plugins/errors/plugin_exceptions.dart';
-import 'package:Bloomee/services/cache/plugin_cache_repository.dart';
-import 'package:Bloomee/services/plugin/plugin_service.dart';
-import 'package:Bloomee/plugins/utils/media_id.dart';
-import 'package:Bloomee/services/plugin_cache_codec.dart';
-import 'package:Bloomee/src/rust/api/plugin/commands.dart';
+import 'package:beatwave/core/di/service_locator.dart';
+import 'package:beatwave/core/events/global_event_bus.dart';
+import 'package:beatwave/core/models/exported.dart';
+import 'package:beatwave/plugins/blocs/content/content_event.dart';
+import 'package:beatwave/plugins/blocs/content/content_state.dart';
+import 'package:beatwave/plugins/errors/plugin_exceptions.dart';
+import 'package:beatwave/services/cache/plugin_cache_repository.dart';
+import 'package:beatwave/services/plugin/plugin_service.dart';
+import 'package:beatwave/plugins/utils/media_id.dart';
+import 'package:beatwave/services/plugin_cache_codec.dart';
+import 'package:beatwave/src/rust/api/plugin/commands.dart';
 
 /// Handles content resolution: search, album/artist/playlist details,
 /// stream URLs, home sections.

@@ -1,12 +1,12 @@
 import 'dart:developer';
-import 'package:Bloomee/core/models/exported.dart';
-import 'package:Bloomee/plugins/utils/media_id.dart';
-import 'package:Bloomee/core/constants/setting_keys.dart';
-import 'package:Bloomee/services/db/db_provider.dart';
-import 'package:Bloomee/services/db/dao/settings_dao.dart';
-import 'package:Bloomee/services/player/player_engine.dart';
-import 'package:Bloomee/services/plugin/plugin_service.dart';
-import 'package:Bloomee/src/rust/api/plugin/commands.dart';
+import 'package:beatwave/core/models/exported.dart';
+import 'package:beatwave/plugins/utils/media_id.dart';
+import 'package:beatwave/core/constants/setting_keys.dart';
+import 'package:beatwave/services/db/db_provider.dart';
+import 'package:beatwave/services/db/dao/settings_dao.dart';
+import 'package:beatwave/services/player/player_engine.dart';
+import 'package:beatwave/services/plugin/plugin_service.dart';
+import 'package:beatwave/src/rust/api/plugin/commands.dart';
 import 'package:rxdart/rxdart.dart';
 
 class RelatedSongsManager {

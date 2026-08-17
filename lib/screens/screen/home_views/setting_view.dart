@@ -1,18 +1,18 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:Bloomee/screens/screen/home_views/setting_views/about.dart';
-import 'package:Bloomee/screens/screen/home_views/setting_views/appui_setting.dart';
-import 'package:Bloomee/screens/screen/home_views/setting_views/local_music_setting.dart';
-import 'package:Bloomee/screens/screen/home_views/setting_views/plugin_defaults_setting.dart';
-import 'package:Bloomee/screens/screen/home_views/setting_views/storage_setting.dart';
-import 'package:Bloomee/screens/screen/home_views/setting_views/country_setting.dart';
-import 'package:Bloomee/screens/screen/home_views/setting_views/download_setting.dart';
-import 'package:Bloomee/screens/screen/home_views/setting_views/lastfm_setting.dart';
-import 'package:Bloomee/screens/screen/home_views/setting_views/player_setting.dart';
-import 'package:Bloomee/screens/screen/home_views/setting_views/updates_setting.dart';
-import 'package:Bloomee/screens/screen/plugin_manager_screen.dart';
+import 'package:beatwave/screens/screen/home_views/setting_views/about.dart';
+import 'package:beatwave/screens/screen/home_views/setting_views/appui_setting.dart';
+import 'package:beatwave/screens/screen/home_views/setting_views/local_music_setting.dart';
+import 'package:beatwave/screens/screen/home_views/setting_views/plugin_defaults_setting.dart';
+import 'package:beatwave/screens/screen/home_views/setting_views/storage_setting.dart';
+import 'package:beatwave/screens/screen/home_views/setting_views/country_setting.dart';
+import 'package:beatwave/screens/screen/home_views/setting_views/download_setting.dart';
+import 'package:beatwave/screens/screen/home_views/setting_views/lastfm_setting.dart';
+import 'package:beatwave/screens/screen/home_views/setting_views/player_setting.dart';
+import 'package:beatwave/screens/screen/home_views/setting_views/updates_setting.dart';
+import 'package:beatwave/screens/screen/plugin_manager_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:Bloomee/core/theme/app_theme.dart';
-import 'package:Bloomee/l10n/app_localizations.dart';
+import 'package:beatwave/core/theme/app_theme.dart';
+import 'package:beatwave/l10n/app_localizations.dart';
 import 'package:icons_plus/icons_plus.dart';
 
 class SettingsView extends StatelessWidget {

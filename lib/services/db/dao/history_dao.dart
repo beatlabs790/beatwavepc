@@ -1,9 +1,9 @@
-﻿import 'dart:developer';
+import 'dart:developer';
 
-import 'package:Bloomee/services/db/dao/track_dao.dart';
-import 'package:Bloomee/services/db/global_db.dart';
-import 'package:Bloomee/services/db/mappers/media_item_mapper.dart';
-import 'package:Bloomee/src/rust/api/plugin/models.dart';
+import 'package:beatwave/services/db/dao/track_dao.dart';
+import 'package:beatwave/services/db/global_db.dart';
+import 'package:beatwave/services/db/mappers/media_item_mapper.dart';
+import 'package:beatwave/src/rust/api/plugin/models.dart';
 import 'package:isar_community/isar.dart';
 
 /// DAO for recording and querying playback history.
@@ -16,7 +16,7 @@ class HistoryDAO {
 
   const HistoryDAO(this._db, this._trackDAO);
 
-  // ── Write ──────────────────────────────────────────────────────────────────
+  // -- Write ------------------------------------------------------------------
 
   /// Record that [track] was played now.
   ///
@@ -43,13 +43,13 @@ class HistoryDAO {
     log('Recorded play for ${track.id}', name: 'HistoryDAO');
   }
 
-  // ── Read ───────────────────────────────────────────────────────────────────
+  // -- Read -------------------------------------------------------------------
 
   /// Return the most recent [limit] history entries as domain [Track] objects.
   ///
   /// If [limit] is 0 all entries are returned (use with care).
   /// Sorted newest-first. Entries with missing track links are skipped
-  /// but NOT deleted — broken entry cleanup is a separate maintenance task.
+  /// but NOT deleted � broken entry cleanup is a separate maintenance task.
   Future<List<Track>> getHistory({int limit = 50}) async {
     final isar = await _db;
     final query = isar.playbackHistoryDBs.where().sortByPlayedAtDesc();
@@ -102,7 +102,7 @@ class HistoryDAO {
     return deleted;
   }
 
-  // ── Maintenance ───────────────────────────────────────────────────────────
+  // -- Maintenance -----------------------------------------------------------
 
   /// Delete history entries older than [days] days.
   ///
@@ -131,7 +131,7 @@ class HistoryDAO {
     log('Cleared all history', name: 'HistoryDAO');
   }
 
-  // ── Watchers ──────────────────────────────────────────────────────────────
+  // -- Watchers --------------------------------------------------------------
 
   /// Stream that fires whenever the history collection changes.
   Future<Stream<void>> watchHistory() async {

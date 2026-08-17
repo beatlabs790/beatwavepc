@@ -1,8 +1,8 @@
-﻿import 'package:Bloomee/core/models/exported.dart';
-import 'package:Bloomee/screens/screen/common_views/album_view.dart';
-import 'package:Bloomee/core/theme/app_theme.dart';
-import 'package:Bloomee/screens/widgets/media_metadata_links.dart';
-import 'package:Bloomee/utils/load_image.dart';
+import 'package:beatwave/core/models/exported.dart';
+import 'package:beatwave/screens/screen/common_views/album_view.dart';
+import 'package:beatwave/core/theme/app_theme.dart';
+import 'package:beatwave/screens/widgets/media_metadata_links.dart';
+import 'package:beatwave/utils/load_image.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
 
@@ -49,10 +49,10 @@ class _AlbumCardState extends State<AlbumCard> {
           onExit: (_) => setState(() => _isHovering = false),
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            // ─── CHANGED: center children horizontally ───
+            // --- CHANGED: center children horizontally ---
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // ─── 1. SQUARE IMAGE CONTAINER ───
+              // --- 1. SQUARE IMAGE CONTAINER ---
               AspectRatio(
                 aspectRatio: 1,
                 child: Container(
@@ -110,7 +110,7 @@ class _AlbumCardState extends State<AlbumCard> {
 
               const SizedBox(height: 8),
 
-              // ─── 2. TEXT SECTION ───
+              // --- 2. TEXT SECTION ---
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 4),
                 child: SizedBox(

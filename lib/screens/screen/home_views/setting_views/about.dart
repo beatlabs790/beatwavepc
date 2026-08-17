@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:Bloomee/l10n/app_localizations.dart';
+import 'package:beatwave/l10n/app_localizations.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -213,7 +213,7 @@ class About extends StatelessWidget {
                       text: 'Maintainer',
                       tooltip: l10n.aboutFollowGitHub,
                       onTap: () {
-                        launchUrl(Uri.parse('https://github.com/HemantKArya'),
+                        launchUrl(Uri.parse('https://github.com/beatlabs790'),
                             mode: LaunchMode.externalApplication);
                       }),
                   // Short label 'Email' opens mail composer
@@ -280,7 +280,7 @@ class About extends StatelessWidget {
               borderRadius: BorderRadius.circular(32.0),
               onTap: () {
                 launchUrl(
-                  Uri.parse("https://hemantkarya.github.io/BloomeeTunes/"),
+                  Uri.parse("https://beatlabs790.github.io/beatwavepc/"),
                   mode: LaunchMode.externalApplication,
                 );
               },
@@ -337,7 +337,7 @@ class About extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
               onTap: () {
                 launchUrl(
-                    Uri.parse("https://hemantkarya.github.io/BloomeeTunes/"),
+                    Uri.parse("https://beatlabs790.github.io/beatwavepc/"),
                     mode: LaunchMode.externalApplication);
               },
               child: Row(

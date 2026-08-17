@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:developer';
 
-import 'package:Bloomee/services/db/dao/cache_dao.dart';
+import 'package:beatwave/services/db/dao/cache_dao.dart';
 
 // ═════════════════════════════════════════════════════════════════════════════
 // PluginCacheWriter — debounced, coalescing Isar write pipeline

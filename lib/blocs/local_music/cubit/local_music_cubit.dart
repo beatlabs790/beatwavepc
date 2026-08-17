@@ -1,8 +1,8 @@
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:Bloomee/services/local_music_service.dart';
-import 'package:Bloomee/src/rust/api/plugin/models.dart';
+import 'package:beatwave/services/local_music_service.dart';
+import 'package:beatwave/src/rust/api/plugin/models.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:file_picker/file_picker.dart';

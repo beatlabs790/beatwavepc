@@ -1,5 +1,5 @@
-import 'package:Bloomee/blocs/player_overlay/player_overlay_cubit.dart';
-import 'package:Bloomee/screens/screen/player_screen.dart';
+import 'package:beatwave/blocs/player_overlay/player_overlay_cubit.dart';
+import 'package:beatwave/screens/screen/player_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

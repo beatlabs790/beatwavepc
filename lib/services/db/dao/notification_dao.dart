@@ -1,4 +1,4 @@
-import 'package:Bloomee/services/db/global_db.dart';
+import 'package:beatwave/services/db/global_db.dart';
 import 'package:isar_community/isar.dart';
 
 /// DAO for in-app notifications.

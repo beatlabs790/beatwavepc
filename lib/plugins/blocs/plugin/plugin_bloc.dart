@@ -2,20 +2,20 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:Bloomee/services/db/dao/settings_dao.dart';
-import 'package:Bloomee/services/db/dao/plugin_storage_dao.dart';
-import 'package:Bloomee/services/db/db_provider.dart';
-import 'package:Bloomee/plugins/blocs/plugin/plugin_event.dart';
-import 'package:Bloomee/plugins/blocs/plugin/plugin_state.dart';
-import 'package:Bloomee/plugins/errors/plugin_exceptions.dart';
-import 'package:Bloomee/plugins/services/plugin_repository_service.dart';
-import 'package:Bloomee/services/plugin/plugin_event_bus.dart';
-import 'package:Bloomee/services/plugin/plugin_load_state_service.dart';
-import 'package:Bloomee/services/plugin/plugin_service.dart';
-import 'package:Bloomee/services/plugin_bootstrap_service.dart';
-import 'package:Bloomee/src/rust/api/plugin/events.dart';
-import 'package:Bloomee/src/rust/api/plugin/plugin_info.dart';
-import 'package:Bloomee/src/rust/api/plugin/types.dart';
+import 'package:beatwave/services/db/dao/settings_dao.dart';
+import 'package:beatwave/services/db/dao/plugin_storage_dao.dart';
+import 'package:beatwave/services/db/db_provider.dart';
+import 'package:beatwave/plugins/blocs/plugin/plugin_event.dart';
+import 'package:beatwave/plugins/blocs/plugin/plugin_state.dart';
+import 'package:beatwave/plugins/errors/plugin_exceptions.dart';
+import 'package:beatwave/plugins/services/plugin_repository_service.dart';
+import 'package:beatwave/services/plugin/plugin_event_bus.dart';
+import 'package:beatwave/services/plugin/plugin_load_state_service.dart';
+import 'package:beatwave/services/plugin/plugin_service.dart';
+import 'package:beatwave/services/plugin_bootstrap_service.dart';
+import 'package:beatwave/src/rust/api/plugin/events.dart';
+import 'package:beatwave/src/rust/api/plugin/plugin_info.dart';
+import 'package:beatwave/src/rust/api/plugin/types.dart';
 
 /// Manages plugin lifecycle: load, unload, install, refresh.
 ///

@@ -1,4 +1,4 @@
-import 'package:Bloomee/src/rust/api/plugin/commands.dart';
+import 'package:beatwave/src/rust/api/plugin/commands.dart';
 
 /// Events for [ContentBloc].
 sealed class ContentEvent {

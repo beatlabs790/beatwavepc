@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
-import 'package:Bloomee/core/constants/setting_keys.dart';
-import 'package:Bloomee/services/db/db_provider.dart';
-import 'package:Bloomee/services/db/dao/settings_dao.dart';
+import 'package:beatwave/core/constants/setting_keys.dart';
+import 'package:beatwave/services/db/db_provider.dart';
+import 'package:beatwave/services/db/dao/settings_dao.dart';
 import 'package:http/http.dart' as http;
 import 'package:package_info_plus/package_info_plus.dart';
 
@@ -167,7 +167,7 @@ Future<Map<String, dynamic>> sourceforgeUpdate(
 Future<Map<String, dynamic>> githubUpdate(
     {Duration timeout = const Duration(seconds: 6)}) async {
   final url =
-      'https://api.github.com/repos/HemantKArya/BloomeeTunes/releases/latest';
+      'https://api.github.com/repos/beatlabs790/beatwavepc/releases/latest';
   PackageInfo packageInfo = await PackageInfo.fromPlatform();
   try {
     final response = await http.get(Uri.parse(url)).timeout(timeout);
@@ -277,7 +277,7 @@ Future<Map<String, dynamic>> getAppUpdates() async {
 Future<String?> fetchChangelog(
     {Duration timeout = const Duration(seconds: 6)}) async {
   const changelogUrl =
-      'https://hemantkarya.github.io/BloomeeTunes/CHANGELOG.md';
+      'https://beatlabs790.github.io/beatwavepc/CHANGELOG.md';
   try {
     final response = await http.get(Uri.parse(changelogUrl)).timeout(timeout);
     if (response.statusCode == 200) {

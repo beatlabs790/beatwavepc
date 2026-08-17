@@ -1,5 +1,5 @@
-import 'package:Bloomee/core/constants/setting_keys.dart';
-import 'package:Bloomee/services/db/dao/settings_dao.dart';
+import 'package:beatwave/core/constants/setting_keys.dart';
+import 'package:beatwave/services/db/dao/settings_dao.dart';
 
 class OnboardingService {
   static bool _onboardingDone = false;

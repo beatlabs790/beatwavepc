@@ -1,16 +1,16 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:async';
 import 'dart:developer';
-import 'package:Bloomee/core/models/exported.dart';
-import 'package:Bloomee/core/constants/setting_keys.dart';
-import 'package:Bloomee/core/models/media_playlist_model.dart';
-import 'package:Bloomee/services/db/dao/library_dao.dart';
-import 'package:Bloomee/services/db/global_db.dart';
-import 'package:Bloomee/services/db/mappers/media_item_mapper.dart';
-import 'package:Bloomee/services/db/mappers/playlist_mapper.dart';
+import 'package:beatwave/core/models/exported.dart';
+import 'package:beatwave/core/constants/setting_keys.dart';
+import 'package:beatwave/core/models/media_playlist_model.dart';
+import 'package:beatwave/services/db/dao/library_dao.dart';
+import 'package:beatwave/services/db/global_db.dart';
+import 'package:beatwave/services/db/mappers/media_item_mapper.dart';
+import 'package:beatwave/services/db/mappers/playlist_mapper.dart';
 import 'package:equatable/equatable.dart';
-import 'package:Bloomee/screens/widgets/snackbar.dart';
-import 'package:Bloomee/services/db/dao/playlist_dao.dart';
+import 'package:beatwave/screens/widgets/snackbar.dart';
+import 'package:beatwave/services/db/dao/playlist_dao.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 part 'library_items_state.dart';
 

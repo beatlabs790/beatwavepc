@@ -1,7 +1,7 @@
 import 'dart:developer';
 import 'dart:io';
-import 'package:Bloomee/core/models/exported.dart';
-import 'package:Bloomee/core/constants/sentinel_values.dart';
+import 'package:beatwave/core/models/exported.dart';
+import 'package:beatwave/core/constants/sentinel_values.dart';
 import 'package:dart_discord_rpc/dart_discord_rpc.dart';
 
 class DiscordService {
@@ -39,8 +39,8 @@ class DiscordService {
           DiscordPresence(
               details: track.title,
               state: isPlaying ? "Playing・$artistStr" : "Paused・$artistStr",
-              largeImageKey: "bloomeetunes_logo",
-              largeImageText: "BloomeeTunes",
+              largeImageKey: "beatwave_logo",
+              largeImageText: "BeatWave",
               startTimeStamp: _startTimeStamp),
         );
       } catch (e) {

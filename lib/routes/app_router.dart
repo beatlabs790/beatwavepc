@@ -1,17 +1,17 @@
-import 'package:Bloomee/core/constants/route_paths.dart';
-import 'package:Bloomee/screens/widgets/global_footer.dart';
+import 'package:beatwave/core/constants/route_paths.dart';
+import 'package:beatwave/screens/widgets/global_footer.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:Bloomee/screens/screen/common_views/add_to_playlist_screen.dart';
-import 'package:Bloomee/screens/screen/explore_screen.dart';
-import 'package:Bloomee/screens/screen/library_screen.dart';
-import 'package:Bloomee/screens/screen/library_views/import_media_view.dart';
-import 'package:Bloomee/screens/screen/library_views/import_process_screen.dart';
-import 'package:Bloomee/screens/screen/library_views/playlist_screen.dart';
-import 'package:Bloomee/screens/screen/offline_screen.dart';
-import 'package:Bloomee/screens/screen/local_music_screen.dart';
-import 'package:Bloomee/screens/screen/search_screen.dart';
-import 'package:Bloomee/screens/screen/chart/chart_view.dart';
+import 'package:beatwave/screens/screen/common_views/add_to_playlist_screen.dart';
+import 'package:beatwave/screens/screen/explore_screen.dart';
+import 'package:beatwave/screens/screen/library_screen.dart';
+import 'package:beatwave/screens/screen/library_views/import_media_view.dart';
+import 'package:beatwave/screens/screen/library_views/import_process_screen.dart';
+import 'package:beatwave/screens/screen/library_views/playlist_screen.dart';
+import 'package:beatwave/screens/screen/offline_screen.dart';
+import 'package:beatwave/screens/screen/local_music_screen.dart';
+import 'package:beatwave/screens/screen/search_screen.dart';
+import 'package:beatwave/screens/screen/chart/chart_view.dart';
 
 /// Canonical app router configuration.
 ///

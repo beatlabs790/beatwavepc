@@ -2,7 +2,7 @@
 ///
 /// These are the Dart-side view types used by the cubit state and the UI.
 /// The actual download work is done by the Rust DownloadManager exposed via FRB.
-import 'package:Bloomee/core/models/exported.dart';
+import 'package:beatwave/core/models/exported.dart';
 
 /// Mirrors the states of the Rust `DownloadTaskState` enum but expressed in
 /// Dart terms that the UI can switch on.

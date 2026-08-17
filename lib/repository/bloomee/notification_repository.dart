@@ -1,5 +1,5 @@
-import 'package:Bloomee/services/db/global_db.dart';
-import 'package:Bloomee/services/db/dao/notification_dao.dart';
+import 'package:beatwave/services/db/global_db.dart';
+import 'package:beatwave/services/db/dao/notification_dao.dart';
 
 /// Repository for in-app notifications.
 ///

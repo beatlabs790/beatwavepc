@@ -1,18 +1,18 @@
 import 'dart:developer';
 
-import 'package:Bloomee/core/events/global_event_bus.dart';
-import 'package:Bloomee/core/constants/setting_keys.dart';
-import 'package:Bloomee/core/models/exported.dart';
-import 'package:Bloomee/plugins/errors/plugin_exceptions.dart';
-import 'package:Bloomee/plugins/utils/media_id.dart';
-import 'package:Bloomee/services/db/dao/download_dao.dart';
-import 'package:Bloomee/services/db/dao/playlist_dao.dart';
-import 'package:Bloomee/services/db/dao/settings_dao.dart';
-import 'package:Bloomee/services/db/dao/track_dao.dart';
-import 'package:Bloomee/services/db/db_provider.dart';
-import 'package:Bloomee/services/plugin/plugin_service.dart';
-import 'package:Bloomee/services/player/stream_quality_selector.dart';
-import 'package:Bloomee/src/rust/api/plugin/commands.dart';
+import 'package:beatwave/core/events/global_event_bus.dart';
+import 'package:beatwave/core/constants/setting_keys.dart';
+import 'package:beatwave/core/models/exported.dart';
+import 'package:beatwave/plugins/errors/plugin_exceptions.dart';
+import 'package:beatwave/plugins/utils/media_id.dart';
+import 'package:beatwave/services/db/dao/download_dao.dart';
+import 'package:beatwave/services/db/dao/playlist_dao.dart';
+import 'package:beatwave/services/db/dao/settings_dao.dart';
+import 'package:beatwave/services/db/dao/track_dao.dart';
+import 'package:beatwave/services/db/db_provider.dart';
+import 'package:beatwave/services/plugin/plugin_service.dart';
+import 'package:beatwave/services/player/stream_quality_selector.dart';
+import 'package:beatwave/src/rust/api/plugin/commands.dart';
 
 class ResolvedMediaSource {
   final Uri uri;

@@ -1,11 +1,11 @@
-import 'package:Bloomee/core/di/service_locator.dart';
-import 'package:Bloomee/core/models/exported.dart';
-import 'package:Bloomee/plugins/utils/media_id.dart';
-import 'package:Bloomee/services/bloomee_player.dart';
-import 'package:Bloomee/services/db/dao/track_dao.dart';
-import 'package:Bloomee/services/db/db_provider.dart';
-import 'package:Bloomee/src/rust/api/plugin/commands.dart';
-import 'package:Bloomee/src/rust/api/plugin/types.dart';
+import 'package:beatwave/core/di/service_locator.dart';
+import 'package:beatwave/core/models/exported.dart';
+import 'package:beatwave/plugins/utils/media_id.dart';
+import 'package:beatwave/services/bloomee_player.dart';
+import 'package:beatwave/services/db/dao/track_dao.dart';
+import 'package:beatwave/services/db/db_provider.dart';
+import 'package:beatwave/src/rust/api/plugin/commands.dart';
+import 'package:beatwave/src/rust/api/plugin/types.dart';
 
 enum SongMetadataRefreshStatus {
   success,

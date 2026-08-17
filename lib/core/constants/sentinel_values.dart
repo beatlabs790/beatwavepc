@@ -4,7 +4,7 @@
 /// on [MediaItemModel]. All player code should use [trackNull] instead.
 library sentinel_values;
 
-import 'package:Bloomee/core/models/exported.dart';
+import 'package:beatwave/core/models/exported.dart';
 
 /// A null/empty [Track] sentinel used as a default value
 /// where a non-nullable Track is required but no track is loaded.

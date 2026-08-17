@@ -1,9 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:Bloomee/core/theme/app_theme.dart';
-import 'package:Bloomee/src/rust/api/plugin/models.dart';
+import 'package:beatwave/core/theme/app_theme.dart';
+import 'package:beatwave/src/rust/api/plugin/models.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
-import 'package:Bloomee/utils/load_image.dart';
+import 'package:beatwave/utils/load_image.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class ChartWidget extends StatelessWidget {

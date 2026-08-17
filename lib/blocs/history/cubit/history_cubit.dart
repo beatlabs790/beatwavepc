@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:developer';
-import 'package:Bloomee/core/models/exported.dart';
-import 'package:Bloomee/services/db/dao/history_dao.dart';
+import 'package:beatwave/core/models/exported.dart';
+import 'package:beatwave/services/db/dao/history_dao.dart';
 import 'package:bloc/bloc.dart';
 
 part 'history_state.dart';

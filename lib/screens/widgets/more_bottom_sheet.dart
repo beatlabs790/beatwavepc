@@ -7,18 +7,18 @@ import 'package:icons_plus/icons_plus.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'package:Bloomee/blocs/add_to_playlist/cubit/add_to_playlist_cubit.dart';
-import 'package:Bloomee/blocs/downloader/cubit/downloader_cubit.dart';
-import 'package:Bloomee/blocs/library/cubit/library_items_cubit.dart';
-import 'package:Bloomee/blocs/media_player/bloomee_player_cubit.dart';
-import 'package:Bloomee/core/constants/route_paths.dart';
-import 'package:Bloomee/core/models/exported.dart';
-import 'package:Bloomee/core/theme/app_theme.dart';
-import 'package:Bloomee/l10n/app_localizations.dart';
-import 'package:Bloomee/screens/widgets/snackbar.dart';
-import 'package:Bloomee/screens/widgets/smart_replace_dialog.dart';
-import 'package:Bloomee/screens/widgets/song_tile.dart';
-import 'package:Bloomee/services/song_metadata_refresh_service.dart';
+import 'package:beatwave/blocs/add_to_playlist/cubit/add_to_playlist_cubit.dart';
+import 'package:beatwave/blocs/downloader/cubit/downloader_cubit.dart';
+import 'package:beatwave/blocs/library/cubit/library_items_cubit.dart';
+import 'package:beatwave/blocs/media_player/bloomee_player_cubit.dart';
+import 'package:beatwave/core/constants/route_paths.dart';
+import 'package:beatwave/core/models/exported.dart';
+import 'package:beatwave/core/theme/app_theme.dart';
+import 'package:beatwave/l10n/app_localizations.dart';
+import 'package:beatwave/screens/widgets/snackbar.dart';
+import 'package:beatwave/screens/widgets/smart_replace_dialog.dart';
+import 'package:beatwave/screens/widgets/song_tile.dart';
+import 'package:beatwave/services/song_metadata_refresh_service.dart';
 
 void showMoreBottomSheet(
   BuildContext context,

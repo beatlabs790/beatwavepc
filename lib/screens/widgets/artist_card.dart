@@ -1,8 +1,8 @@
-﻿// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:Bloomee/core/models/exported.dart';
-import 'package:Bloomee/screens/screen/common_views/artist_view.dart';
-import 'package:Bloomee/core/theme/app_theme.dart';
-import 'package:Bloomee/utils/load_image.dart';
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:beatwave/core/models/exported.dart';
+import 'package:beatwave/screens/screen/common_views/artist_view.dart';
+import 'package:beatwave/core/theme/app_theme.dart';
+import 'package:beatwave/utils/load_image.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
 
@@ -91,7 +91,7 @@ class _ArtistCardState extends State<ArtistCard> {
                   ),
                 ),
 
-                // ─── ARTIST NAME ───
+                // --- ARTIST NAME ---
                 const SizedBox(height: 12),
                 Text(
                   widget.artist.name,

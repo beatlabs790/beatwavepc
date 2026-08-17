@@ -1,11 +1,11 @@
-﻿import 'dart:developer';
+import 'dart:developer';
 
-import 'package:Bloomee/core/models/exported.dart';
-import 'package:Bloomee/core/models/media_playlist_model.dart';
-import 'package:Bloomee/services/db/global_db.dart';
-import 'package:Bloomee/services/db/mappers/collection_mapper.dart';
-import 'package:Bloomee/services/db/mappers/media_item_mapper.dart';
-import 'package:Bloomee/services/db/mappers/playlist_mapper.dart';
+import 'package:beatwave/core/models/exported.dart';
+import 'package:beatwave/core/models/media_playlist_model.dart';
+import 'package:beatwave/services/db/global_db.dart';
+import 'package:beatwave/services/db/mappers/collection_mapper.dart';
+import 'package:beatwave/services/db/mappers/media_item_mapper.dart';
+import 'package:beatwave/services/db/mappers/playlist_mapper.dart';
 import 'package:isar_community/isar.dart';
 
 /// DAO for the user's saved library: artists, albums, and remote playlists.
@@ -18,7 +18,7 @@ class LibraryDAO {
 
   const LibraryDAO(this._db);
 
-  // ── Private helpers ───────────────────────────────────────────────────────
+  // -- Private helpers -------------------------------------------------------
 
   /// Extract the canonical mediaId from a [PlaylistDB] based on its type.
   String _mediaIdOf(PlaylistDB p) {
@@ -49,7 +49,7 @@ class LibraryDAO {
     return null;
   }
 
-  // ── Save ───────────────────────────────────────────────────────────────────
+  // -- Save -------------------------------------------------------------------
 
   /// Save (or update) an [ArtistSummary] in the library.
   ///
@@ -65,7 +65,7 @@ class LibraryDAO {
 
     row.type = PlaylistTypeDB.artist;
     row.name = artist.id;
-    row.subtitle = 'Artist • $sourceName';
+    row.subtitle = 'Artist � $sourceName';
     row.thumbnail = artistDb.thumbnail;
     row.description = artist.subtitle;
     row.artists = [artistDb];
@@ -90,7 +90,7 @@ class LibraryDAO {
 
     row.type = PlaylistTypeDB.album;
     row.name = album.id;
-    row.subtitle = 'Album • $sourceName';
+    row.subtitle = 'Album � $sourceName';
     row.thumbnail = albumDb.thumbnail;
     row.description = album.subtitle;
     row.artists = albumDb.artists;
@@ -131,7 +131,7 @@ class LibraryDAO {
 
     row.type = PlaylistTypeDB.remotePlaylist;
     row.name = playlist.id;
-    row.subtitle = 'Playlist • $sourceName';
+    row.subtitle = 'Playlist � $sourceName';
     row.thumbnail = remoteSummary.thumbnail;
     row.description = playlist.owner;
     row.artists = ownerArtists;
@@ -146,7 +146,7 @@ class LibraryDAO {
     return id;
   }
 
-  // ── Read ───────────────────────────────────────────────────────────────────
+  // -- Read -------------------------------------------------------------------
 
   /// Return all saved playlists of a given [type], newest first.
   Future<List<PlaylistDB>> _getSavedByType(PlaylistTypeDB type) async {
@@ -176,7 +176,7 @@ class LibraryDAO {
     return rows.map(playlistDBToPlaylistSummary).toList();
   }
 
-  // ── Remove ─────────────────────────────────────────────────────────────────
+  // -- Remove -----------------------------------------------------------------
 
   /// Remove a saved entry by its [mediaId] and [type].
   Future<bool> removeByMediaId(String mediaId, PlaylistTypeDB type) async {
@@ -194,7 +194,7 @@ class LibraryDAO {
     await isar.writeTxn(() => isar.playlistDBs.delete(id));
   }
 
-  // ── Existence check ────────────────────────────────────────────────────────
+  // -- Existence check --------------------------------------------------------
 
   /// Check whether a collection with [mediaId] and [type] is saved.
   Future<bool> isSavedByMediaId(String mediaId, PlaylistTypeDB type) async {
@@ -208,7 +208,7 @@ class LibraryDAO {
     return isSavedByMediaId(mediaId, dbType);
   }
 
-  // ── Resolve navigation target ─────────────────────────────────────────────
+  // -- Resolve navigation target ---------------------------------------------
 
   /// Look up a saved collection by its storage key and convert to a domain [Playlist].
   ///
@@ -223,7 +223,7 @@ class LibraryDAO {
     return playlistDBToPlaylist(db);
   }
 
-  // ── Watchers ──────────────────────────────────────────────────────────────
+  // -- Watchers --------------------------------------------------------------
 
   /// Stream that emits whenever any saved collection changes.
   Future<Stream<void>> watchSavedCollections() async {

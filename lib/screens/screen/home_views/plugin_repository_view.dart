@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; // Required for Clipboard
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icons_plus/icons_plus.dart';
-import 'package:Bloomee/l10n/app_localizations.dart';
-import 'package:Bloomee/core/theme/app_theme.dart';
-import 'package:Bloomee/plugins/blocs/repository/plugin_repository_cubit.dart';
-import 'package:Bloomee/plugins/models/plugin_repository.dart';
-import 'package:Bloomee/screens/widgets/sign_board_widget.dart';
-import 'package:Bloomee/screens/widgets/snackbar.dart';
-import 'package:Bloomee/screens/screen/home_views/repository_detail_screen.dart';
+import 'package:beatwave/l10n/app_localizations.dart';
+import 'package:beatwave/core/theme/app_theme.dart';
+import 'package:beatwave/plugins/blocs/repository/plugin_repository_cubit.dart';
+import 'package:beatwave/plugins/models/plugin_repository.dart';
+import 'package:beatwave/screens/widgets/sign_board_widget.dart';
+import 'package:beatwave/screens/widgets/snackbar.dart';
+import 'package:beatwave/screens/screen/home_views/repository_detail_screen.dart';
 
 class PluginRepositoryView extends StatefulWidget {
   const PluginRepositoryView({super.key});

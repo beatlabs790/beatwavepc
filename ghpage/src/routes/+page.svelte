@@ -158,7 +158,7 @@
 </script>
 
 <svelte:head>
-	<title>Bloomee</title>
+	<title>BeatWave</title>
 </svelte:head>
 
 <Background />
@@ -169,11 +169,11 @@
 
 	<div class="content-wrapper" bind:this={contentWrapper}>
 		<section id="section-0" class="content-section {active === 0 ? 'active' : ''}" aria-hidden={active !== 0}>
-			<h1 class="home-title">BloomeeTunes</h1>
+			<h1 class="home-title">beatwavepc</h1>
 			<p class="home-subtitle">Multi-source and open music app for free.</p>
-			<div class="support-message" role="region" aria-label="Support Bloomee">
-<span class="lead">Keep bloomee alive!</span>
-<span class="msg">Your support today fuels every <span class="highlight">future update</span>, keeps Bloomee <span class="highlight">ad-free</span>, and ensures the tunes <span class="highlight">never stop</span>. ✨</span>
+			<div class="support-message" role="region" aria-label="Support BeatWave">
+<span class="lead">Keep BeatWave alive!</span>
+<span class="msg">Your support today fuels every <span class="highlight">future update</span>, keeps BeatWave <span class="highlight">ad-free</span>, and ensures the tunes <span class="highlight">never stop</span>. ✨</span>
 </div>
 
 
@@ -188,7 +188,7 @@
 		</section>
 
 		<section id="section-2" class="content-section {active === 2 ? 'active' : ''}" aria-hidden={active !== 1}>
-			<!-- <h2>🌟 Why Choose Bloomee?</h2> -->
+			<!-- <h2>🌟 Why Choose BeatWave?</h2> -->
 			<FeaturesCarousel />
 		</section>
 

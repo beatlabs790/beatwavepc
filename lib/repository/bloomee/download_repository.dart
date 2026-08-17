@@ -1,6 +1,6 @@
-import 'package:Bloomee/core/models/exported.dart';
-import 'package:Bloomee/services/db/global_db.dart';
-import 'package:Bloomee/services/db/dao/download_dao.dart';
+import 'package:beatwave/core/models/exported.dart';
+import 'package:beatwave/services/db/global_db.dart';
+import 'package:beatwave/services/db/dao/download_dao.dart';
 
 /// Repository for download operations — wraps [DownloadDAO].
 class DownloadRepository {

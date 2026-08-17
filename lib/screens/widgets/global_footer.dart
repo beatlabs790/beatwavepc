@@ -1,8 +1,8 @@
-import 'package:Bloomee/blocs/player_overlay/player_overlay_cubit.dart';
-import 'package:Bloomee/screens/widgets/player_overlay_wrapper.dart';
-import 'package:Bloomee/screens/widgets/mini_player_widget.dart';
-import 'package:Bloomee/core/theme/app_theme.dart';
-import 'package:Bloomee/l10n/app_localizations.dart';
+import 'package:beatwave/blocs/player_overlay/player_overlay_cubit.dart';
+import 'package:beatwave/screens/widgets/player_overlay_wrapper.dart';
+import 'package:beatwave/screens/widgets/mini_player_widget.dart';
+import 'package:beatwave/core/theme/app_theme.dart';
+import 'package:beatwave/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

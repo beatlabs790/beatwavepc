@@ -4,17 +4,17 @@ import 'dart:developer';
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:Bloomee/core/constants/setting_keys.dart';
-import 'package:Bloomee/plugins/errors/plugin_exceptions.dart';
-import 'package:Bloomee/plugins/models/plugin_repository.dart';
-import 'package:Bloomee/plugins/utils/plugin_constants.dart';
-import 'package:Bloomee/plugins/services/plugin_repository_service.dart';
-import 'package:Bloomee/services/db/dao/settings_dao.dart';
-import 'package:Bloomee/services/plugin/plugin_load_state_service.dart';
-import 'package:Bloomee/services/plugin/plugin_service.dart';
-import 'package:Bloomee/src/rust/api/plugin/plugin_info.dart';
-import 'package:Bloomee/src/rust/api/plugin/types.dart';
-import 'package:Bloomee/utils/country_info.dart';
+import 'package:beatwave/core/constants/setting_keys.dart';
+import 'package:beatwave/plugins/errors/plugin_exceptions.dart';
+import 'package:beatwave/plugins/models/plugin_repository.dart';
+import 'package:beatwave/plugins/utils/plugin_constants.dart';
+import 'package:beatwave/plugins/services/plugin_repository_service.dart';
+import 'package:beatwave/services/db/dao/settings_dao.dart';
+import 'package:beatwave/services/plugin/plugin_load_state_service.dart';
+import 'package:beatwave/services/plugin/plugin_service.dart';
+import 'package:beatwave/src/rust/api/plugin/plugin_info.dart';
+import 'package:beatwave/src/rust/api/plugin/types.dart';
+import 'package:beatwave/utils/country_info.dart';
 import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
 
@@ -58,7 +58,7 @@ class PluginBootstrapProgress {
 
 class PluginBootstrapService {
   static const String hostedRepositoriesUrl =
-      'https://hemantkarya.github.io/BloomeeTunes/repositories.json';
+      'https://beatlabs790.github.io/beatwavepc/repositories.json';
 
   static const int maxRetries = 3;
 

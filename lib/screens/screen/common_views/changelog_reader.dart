@@ -1,9 +1,9 @@
-import 'package:Bloomee/blocs/settings_cubit/cubit/settings_cubit.dart';
-import 'package:Bloomee/screens/screen/home_views/setting_views/about.dart';
+import 'package:beatwave/blocs/settings_cubit/cubit/settings_cubit.dart';
+import 'package:beatwave/screens/screen/home_views/setting_views/about.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:Bloomee/core/constants/setting_keys.dart';
+import 'package:beatwave/core/constants/setting_keys.dart';
 
 // The final changelog string for testing all features
 const String changelogText = """

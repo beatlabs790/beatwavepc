@@ -9,14 +9,14 @@ import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-import 'package:Bloomee/l10n/app_localizations.dart';
-import 'package:Bloomee/core/theme/app_theme.dart';
-import 'package:Bloomee/plugins/models/plugin_repository.dart';
-import 'package:Bloomee/plugins/blocs/plugin/plugin_bloc.dart';
-import 'package:Bloomee/plugins/blocs/plugin/plugin_event.dart';
-import 'package:Bloomee/plugins/blocs/plugin/plugin_state.dart';
-import 'package:Bloomee/plugins/utils/plugin_constants.dart';
-import 'package:Bloomee/screens/widgets/snackbar.dart';
+import 'package:beatwave/l10n/app_localizations.dart';
+import 'package:beatwave/core/theme/app_theme.dart';
+import 'package:beatwave/plugins/models/plugin_repository.dart';
+import 'package:beatwave/plugins/blocs/plugin/plugin_bloc.dart';
+import 'package:beatwave/plugins/blocs/plugin/plugin_event.dart';
+import 'package:beatwave/plugins/blocs/plugin/plugin_state.dart';
+import 'package:beatwave/plugins/utils/plugin_constants.dart';
+import 'package:beatwave/screens/widgets/snackbar.dart';
 
 enum _RemoteInstallPhase {
   idle,

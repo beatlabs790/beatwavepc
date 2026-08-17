@@ -1,9 +1,9 @@
-import 'package:Bloomee/blocs/library/cubit/library_items_cubit.dart';
+import 'package:beatwave/blocs/library/cubit/library_items_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:Bloomee/core/theme/app_theme.dart';
-import 'package:Bloomee/l10n/app_localizations.dart';
+import 'package:beatwave/core/theme/app_theme.dart';
+import 'package:beatwave/l10n/app_localizations.dart';
 
 void createPlaylistDialog(BuildContext context) {
   final l10n = AppLocalizations.of(context)!;

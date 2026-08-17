@@ -1,6 +1,6 @@
-# BloomeeTunes Github Page
+# beatwavepc Github Page
 
-A small, fast Svelte site used to host BloomeeTunes on GitHub Pages. This file shows just what you need to run, build, and deploy.
+A small, fast Svelte site used to host beatwavepc on GitHub Pages. This file shows just what you need to run, build, and deploy.
 
 ---
 

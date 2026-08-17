@@ -5,21 +5,21 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icons_plus/icons_plus.dart';
 
-import 'package:Bloomee/blocs/media_player/bloomee_player_cubit.dart';
-import 'package:Bloomee/core/models/media_playlist_model.dart';
-import 'package:Bloomee/core/models/exported.dart';
-import 'package:Bloomee/screens/screen/library_views/cubit/current_playlist_cubit.dart';
-import 'package:Bloomee/screens/screen/library_views/more_opts_sheet.dart';
-import 'package:Bloomee/blocs/downloader/cubit/downloader_cubit.dart';
-import 'package:Bloomee/screens/widgets/more_bottom_sheet.dart';
-import 'package:Bloomee/screens/widgets/animated_list_item.dart';
-import 'package:Bloomee/screens/widgets/play_pause_widget.dart';
-import 'package:Bloomee/screens/widgets/sign_board_widget.dart';
-import 'package:Bloomee/screens/widgets/snackbar.dart';
-import 'package:Bloomee/screens/widgets/song_tile.dart';
-import 'package:Bloomee/core/theme/app_theme.dart';
-import 'package:Bloomee/utils/load_image.dart';
-import 'package:Bloomee/l10n/app_localizations.dart';
+import 'package:beatwave/blocs/media_player/bloomee_player_cubit.dart';
+import 'package:beatwave/core/models/media_playlist_model.dart';
+import 'package:beatwave/core/models/exported.dart';
+import 'package:beatwave/screens/screen/library_views/cubit/current_playlist_cubit.dart';
+import 'package:beatwave/screens/screen/library_views/more_opts_sheet.dart';
+import 'package:beatwave/blocs/downloader/cubit/downloader_cubit.dart';
+import 'package:beatwave/screens/widgets/more_bottom_sheet.dart';
+import 'package:beatwave/screens/widgets/animated_list_item.dart';
+import 'package:beatwave/screens/widgets/play_pause_widget.dart';
+import 'package:beatwave/screens/widgets/sign_board_widget.dart';
+import 'package:beatwave/screens/widgets/snackbar.dart';
+import 'package:beatwave/screens/widgets/song_tile.dart';
+import 'package:beatwave/core/theme/app_theme.dart';
+import 'package:beatwave/utils/load_image.dart';
+import 'package:beatwave/l10n/app_localizations.dart';
 
 part 'playlist_info_dialog.dart';
 

@@ -1493,7 +1493,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "rust_lib_Bloomee"
+name = "rust_lib_beatwave"
 version = "0.1.0"
 dependencies = [
  "anyhow",

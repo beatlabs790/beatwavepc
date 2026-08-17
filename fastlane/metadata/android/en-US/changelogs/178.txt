@@ -33,4 +33,4 @@
 	<li><strong>Bulk Download Snackbars</strong>: Fixed snackbar notifications to show only one message for bulk downloads instead of individual messages per song.</li>
 </ul>
 
-<p>Thank you for using Bloomee — enjoy the update!</p>
+<p>Thank you for using BeatWave — enjoy the update!</p>

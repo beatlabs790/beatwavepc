@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:Bloomee/services/db/db_provider.dart';
-import 'package:Bloomee/services/import_export_service.dart';
+import 'package:beatwave/services/db/db_provider.dart';
+import 'package:beatwave/services/import_export_service.dart';
 
 enum RestorePayloadType {
   isarSnapshot,

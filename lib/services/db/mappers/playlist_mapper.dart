@@ -1,7 +1,7 @@
-import 'package:Bloomee/core/models/media_playlist_model.dart';
-import 'package:Bloomee/services/db/global_db.dart';
-import 'package:Bloomee/services/db/mappers/collection_mapper.dart';
-import 'package:Bloomee/services/db/mappers/media_item_mapper.dart';
+import 'package:beatwave/core/models/media_playlist_model.dart';
+import 'package:beatwave/services/db/global_db.dart';
+import 'package:beatwave/services/db/mappers/collection_mapper.dart';
+import 'package:beatwave/services/db/mappers/media_item_mapper.dart';
 
 /// Maps between [PlaylistDB] (Isar entity) and [Playlist] (domain model).
 

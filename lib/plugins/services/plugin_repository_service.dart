@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:async';
 import 'package:http/http.dart' as http;
-import 'package:Bloomee/services/db/dao/settings_dao.dart';
-import 'package:Bloomee/plugins/models/plugin_repository.dart';
+import 'package:beatwave/services/db/dao/settings_dao.dart';
+import 'package:beatwave/plugins/models/plugin_repository.dart';
 
 class PluginRepositoryService {
   final SettingsDAO _settingsDao;

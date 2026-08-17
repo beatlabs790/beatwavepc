@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:palette_generator/palette_generator.dart';
-import 'package:Bloomee/utils/load_image.dart';
+import 'package:beatwave/utils/load_image.dart';
 
 Future<PaletteGenerator> getPalleteFromImage(String url) async {
   ImageProvider<Object> placeHolder =

@@ -1,10 +1,10 @@
 // Page for editing and reordering playlist items.
 import 'dart:ui';
-import 'package:Bloomee/core/models/exported.dart';
-import 'package:Bloomee/screens/screen/library_views/cubit/current_playlist_cubit.dart';
-import 'package:Bloomee/screens/widgets/snackbar.dart';
-import 'package:Bloomee/screens/widgets/song_tile.dart';
-import 'package:Bloomee/core/theme/app_theme.dart';
+import 'package:beatwave/core/models/exported.dart';
+import 'package:beatwave/screens/screen/library_views/cubit/current_playlist_cubit.dart';
+import 'package:beatwave/screens/widgets/snackbar.dart';
+import 'package:beatwave/screens/widgets/song_tile.dart';
+import 'package:beatwave/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icons_plus/icons_plus.dart';

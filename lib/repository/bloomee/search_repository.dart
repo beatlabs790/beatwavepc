@@ -1,4 +1,4 @@
-import 'package:Bloomee/services/db/dao/search_history_dao.dart';
+import 'package:beatwave/services/db/dao/search_history_dao.dart';
 
 /// Repository for search operations — history persistence and search
 /// suggestions.

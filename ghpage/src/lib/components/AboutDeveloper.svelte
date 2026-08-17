@@ -14,7 +14,7 @@
       <i class="fa-brands fa-linkedin"></i>
       LinkedIn
     </a>
-  <a href="https://github.com/HemantKArya" class="contact-btn github" target="_blank" rel="noopener noreferrer" aria-label="Hemant on GitHub" title="GitHub - HemantKArya">
+  <a href="https://github.com/beatlabs790" class="contact-btn github" target="_blank" rel="noopener noreferrer" aria-label="Hemant on GitHub" title="GitHub - beatlabs790">
       <i class="fa-brands fa-github"></i>
       GitHub
     </a>

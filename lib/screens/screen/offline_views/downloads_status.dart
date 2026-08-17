@@ -1,6 +1,6 @@
-import 'package:Bloomee/screens/widgets/sign_board_widget.dart';
+import 'package:beatwave/screens/widgets/sign_board_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:Bloomee/core/theme/app_theme.dart';
+import 'package:beatwave/core/theme/app_theme.dart';
 import 'package:icons_plus/icons_plus.dart';
 
 class DownloadsView extends StatelessWidget {

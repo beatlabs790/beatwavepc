@@ -1,6 +1,6 @@
-﻿import 'dart:developer';
+import 'dart:developer';
 
-import 'package:Bloomee/services/db/global_db.dart';
+import 'package:beatwave/services/db/global_db.dart';
 import 'package:isar_community/isar.dart';
 
 /// DAO for API response cache (TTL-aware) and API token storage.
@@ -13,7 +13,7 @@ class CacheDAO {
 
   const CacheDAO(this._db);
 
-  // ── API response cache (CacheEntryDB) ─────────────────────────────────────
+  // -- API response cache (CacheEntryDB) -------------------------------------
 
   /// Upsert a cache entry by [key].
   ///
@@ -117,7 +117,7 @@ class CacheDAO {
     await isar.writeTxn(() => isar.cacheEntryDBs.putAll(objects));
   }
 
-  // ── API tokens (AppSettingsStrDB) ─────────────────────────────────────────
+  // -- API tokens (AppSettingsStrDB) -----------------------------------------
 
   /// Store an API token for [apiName] with its expiry in seconds.
   ///

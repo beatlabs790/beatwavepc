@@ -1,4 +1,4 @@
-﻿import 'dart:async';
+import 'dart:async';
 import 'dart:developer';
 
 import 'package:media_kit/media_kit.dart';
@@ -52,7 +52,7 @@ class VolumeFader {
       final now = DateTime.now().millisecondsSinceEpoch;
       final frac = ((now - startMs) / (endMs - startMs)).clamp(0.0, 1.0);
       final vol = startVol + (endVol - startVol) * frac;
-      // Fire and forget — do NOT await. Awaiting here would back-pressure the timer.
+      // Fire and forget � do NOT await. Awaiting here would back-pressure the timer.
       player.setVolume(vol.clamp(0.0, 100.0));
       if (frac >= 1.0) t.cancel();
     });
@@ -655,7 +655,7 @@ class PlayerEngine {
 
   bool get isPreloaded => _standbyPreloaded || _pendingPreloadUri != null;
 
-  // ── Equalizer ──────────────────────────────────────────────────────────────
+  // -- Equalizer --------------------------------------------------------------
 
   List<EqualizerBand> get equalizerBands => List.unmodifiable(_eqBands);
   bool get equalizerEnabled => _eqEnabled;

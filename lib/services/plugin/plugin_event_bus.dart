@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'dart:developer';
 
-import 'package:Bloomee/src/rust/api/plugin/events.dart';
-import 'package:Bloomee/src/rust/api/plugin/plugin.dart';
-import 'package:Bloomee/src/rust/api/bridge.dart' as bridge;
+import 'package:beatwave/src/rust/api/plugin/events.dart';
+import 'package:beatwave/src/rust/api/plugin/plugin.dart';
+import 'package:beatwave/src/rust/api/bridge.dart' as bridge;
 
 /// Connects to the Rust plugin manager's event stream and re-broadcasts
 /// [PluginManagerEvent]s to Dart listeners.

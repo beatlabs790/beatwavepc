@@ -1,18 +1,18 @@
 import 'dart:async';
 import 'dart:developer';
 
-import 'package:Bloomee/services/meta_resolver/cross_plugin_resolver.dart';
+import 'package:beatwave/services/meta_resolver/cross_plugin_resolver.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:Bloomee/core/di/service_locator.dart';
-import 'package:Bloomee/plugins/blocs/import/content_import_state.dart';
-import 'package:Bloomee/services/db/dao/playlist_dao.dart';
-import 'package:Bloomee/services/db/dao/track_dao.dart';
-import 'package:Bloomee/services/db/db_provider.dart';
-import 'package:Bloomee/services/plugin/plugin_service.dart';
-import 'package:Bloomee/src/rust/api/plugin/commands.dart';
-import 'package:Bloomee/src/rust/api/plugin/types.dart';
-import 'package:Bloomee/src/rust/api/plugin/models.dart';
+import 'package:beatwave/core/di/service_locator.dart';
+import 'package:beatwave/plugins/blocs/import/content_import_state.dart';
+import 'package:beatwave/services/db/dao/playlist_dao.dart';
+import 'package:beatwave/services/db/dao/track_dao.dart';
+import 'package:beatwave/services/db/db_provider.dart';
+import 'package:beatwave/services/plugin/plugin_service.dart';
+import 'package:beatwave/src/rust/api/plugin/commands.dart';
+import 'package:beatwave/src/rust/api/plugin/types.dart';
+import 'package:beatwave/src/rust/api/plugin/models.dart';
 
 const int _kResolutionConcurrency = 5;
 const Duration _kPluginTimeout = Duration(seconds: 10);

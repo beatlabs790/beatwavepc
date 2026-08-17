@@ -1,12 +1,12 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:Bloomee/core/models/exported.dart';
-import 'package:Bloomee/core/models/media_playlist_model.dart';
-import 'package:Bloomee/services/db/dao/playlist_dao.dart';
-import 'package:Bloomee/services/db/mappers/media_item_mapper.dart';
+import 'package:beatwave/core/models/exported.dart';
+import 'package:beatwave/core/models/media_playlist_model.dart';
+import 'package:beatwave/services/db/dao/playlist_dao.dart';
+import 'package:beatwave/services/db/mappers/media_item_mapper.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:palette_generator/palette_generator.dart';
-import 'package:Bloomee/utils/pallete_generator.dart';
+import 'package:beatwave/utils/pallete_generator.dart';
 
 part 'current_playlist_state.dart';
 
