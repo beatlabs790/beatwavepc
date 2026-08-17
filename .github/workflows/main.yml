@@ -52,12 +52,3 @@ jobs:
               with:
                 name: Release-Windows
                 path: build/windows/x64/beatwave_windows_x64_v${{ env.VERSION }}+${{github.run_number}}.zip
-
-            - name: Create Release
-              uses: ncipollo/release-action@v1
-              with:
-                artifacts: build/windows/x64/beatwave_windows_x64_v${{ env.VERSION }}+${{github.run_number}}.zip
-                tag: v${{ env.VERSION }}+${{github.run_number}}
-                token: ${{secrets.SECRET_KEY}}
-                prerelease: true
-                allowUpdates: true 
