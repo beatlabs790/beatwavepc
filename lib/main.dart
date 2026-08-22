@@ -151,6 +151,56 @@ Future<void> setupPlayerCubit() async {
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Invert mouse scroll wheel globally
+  final originalCallback = WidgetsBinding.instance.platformDispatcher.onPointerDataPacket;
+  WidgetsBinding.instance.platformDispatcher.onPointerDataPacket = (PointerDataPacket packet) {
+    final modifiedData = packet.data.map((d) {
+      if (d.signalKind == PointerSignalKind.scroll) {
+        return PointerData(
+          viewId: d.viewId,
+          embedderId: d.embedderId,
+          timeStamp: d.timeStamp,
+          change: d.change,
+          kind: d.kind,
+          signalKind: d.signalKind,
+          device: d.device,
+          pointerIdentifier: d.pointerIdentifier,
+          physicalX: d.physicalX,
+          physicalY: d.physicalY,
+          physicalDeltaX: d.physicalDeltaX,
+          physicalDeltaY: d.physicalDeltaY,
+          buttons: d.buttons,
+          obscured: d.obscured,
+          synthesized: d.synthesized,
+          pressure: d.pressure,
+          pressureMin: d.pressureMin,
+          pressureMax: d.pressureMax,
+          distance: d.distance,
+          distanceMax: d.distanceMax,
+          size: d.size,
+          radiusMajor: d.radiusMajor,
+          radiusMinor: d.radiusMinor,
+          radiusMin: d.radiusMin,
+          radiusMax: d.radiusMax,
+          orientation: d.orientation,
+          tilt: d.tilt,
+          platformData: d.platformData,
+          scrollDeltaX: -d.scrollDeltaX,
+          scrollDeltaY: -d.scrollDeltaY,
+          panX: d.panX,
+          panY: d.panY,
+          panDeltaX: d.panDeltaX,
+          panDeltaY: d.panDeltaY,
+          scale: d.scale,
+          rotation: d.rotation,
+        );
+      }
+      return d;
+    }).toList();
+    originalCallback?.call(PointerDataPacket(data: modifiedData));
+  };
+
   GestureBinding.instance.resamplingEnabled = true;
   MediaKit.ensureInitialized();
   await bootstrapApp();

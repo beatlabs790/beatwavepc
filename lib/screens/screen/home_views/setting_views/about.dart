@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:beatwave/l10n/app_localizations.dart';
 import 'package:iconsx_plus/iconsx_plus.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -80,7 +81,7 @@ class About extends StatelessWidget {
                     const Spacer(),
                     _buildInfoCard(context, l10n),
                     const SizedBox(height: 50),
-                    _buildSupportSection(l10n),
+                    _buildSupportSection(context, l10n),
                     const Spacer(),
                     // Footer moved to bottom of screen
                     const SizedBox(height: 12),
@@ -111,6 +112,15 @@ class About extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(16),
+                child: Image.asset(
+                  'assets/icons/beatwave_new_logo_c.png',
+                  height: 72,
+                  width: 72,
+                ),
+              ),
+              const SizedBox(height: 16),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -119,23 +129,13 @@ class About extends StatelessWidget {
                     shaderCallback: (bounds) => kTitleGradient.createShader(
                       Rect.fromLTWH(0, 0, bounds.width, bounds.height),
                     ),
-                    // Use Wrap so title + flower can wrap on narrow widths.
-                    child: const Wrap(
-                      alignment: WrapAlignment.center,
-                      crossAxisAlignment: WrapCrossAlignment.center,
-                      spacing: 6,
-                      children: [
-                        Text(
-                          'BeatWave',
-                          style: TextStyle(
-                            fontSize: 28,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Gilroy',
-                          ),
-                        ),
-                        // Small animated flower
-                        GentleRotatingFlower(size: 28),
-                      ],
+                    child: const Text(
+                      'BeatWave',
+                      style: TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Gilroy',
+                      ),
                     ),
                   ),
                 ],
@@ -149,53 +149,62 @@ class About extends StatelessWidget {
                     fontFamily: 'Gilroy'),
               ),
               const SizedBox(height: 35),
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-                decoration: BoxDecoration(
-                  color: Colors.black.withValues(alpha: 0.3),
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        gradient: kHandleGradient,
-                        boxShadow: [
-                          BoxShadow(
-                            color:
-                                const Color(0xFFF88A6B).withValues(alpha: 0.5),
-                            blurRadius: 10,
-                          ),
-                        ],
-                      ),
-                      child: const CircleAvatar(
-                          backgroundColor: Colors.transparent, radius: 10),
-                    ),
-                    const SizedBox(width: 12),
-                    Flexible(
-                      child: Text(
-                        '@iamhemantindia',
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          color: kPrimaryTextColor,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 16,
-                          fontFamily: 'Gilroy',
-                          shadows: [
-                            Shadow(
-                              color: const Color.fromARGB(255, 255, 246, 238)
-                                  .withValues(alpha: 0.4),
-                              blurRadius: 12,
-                              offset: Offset(0, 0),
+              InkWell(
+                borderRadius: BorderRadius.circular(30),
+                onTap: () {
+                  launchUrl(
+                    Uri.parse("https://instagram.com/vortex.apps"),
+                    mode: LaunchMode.externalApplication,
+                  );
+                },
+                child: Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                  decoration: BoxDecoration(
+                    color: Colors.black.withValues(alpha: 0.3),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          gradient: kHandleGradient,
+                          boxShadow: [
+                            BoxShadow(
+                              color:
+                                  const Color(0xFFF88A6B).withValues(alpha: 0.5),
+                              blurRadius: 10,
                             ),
                           ],
                         ),
+                        child: const CircleAvatar(
+                            backgroundColor: Colors.transparent, radius: 10),
                       ),
-                    ),
-                  ],
+                      const SizedBox(width: 12),
+                      Flexible(
+                        child: Text(
+                          '@vortex.apps',
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            color: kPrimaryTextColor,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            fontFamily: 'Gilroy',
+                            shadows: [
+                              Shadow(
+                                color: const Color.fromARGB(255, 255, 246, 238)
+                                    .withValues(alpha: 0.4),
+                                blurRadius: 12,
+                                offset: Offset(0, 0),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(height: 35),
@@ -216,26 +225,16 @@ class About extends StatelessWidget {
                         launchUrl(Uri.parse('https://github.com/beatlabs790'),
                             mode: LaunchMode.externalApplication);
                       }),
-                  // Short label 'Email' opens mail composer
+                  // Short label 'X' opens Twitter/X profile
                   _InfoPill(
                       icon: FontAwesome.x_twitter_brand,
-                      text: 'Contact',
-                      tooltip: l10n.aboutSendInquiry,
+                      text: '@beatlabs10',
+                      tooltip: 'Follow on X',
                       onTap: () {
                         launchUrl(
-                          Uri.parse('https://x.com/iamhemantindia'),
+                          Uri.parse('https://x.com/beatlabs10'),
                           mode: LaunchMode.externalApplication,
                         );
-                      }),
-                  // Short label 'Linkedin' opens Linkedin profile
-                  _InfoPill(
-                      icon: FontAwesome.linkedin_brand,
-                      text: 'Linkedin',
-                      tooltip: l10n.aboutCreativeHighlights,
-                      onTap: () {
-                        launchUrl(
-                            Uri.parse('https://linkedin.com/in/iamhemantindia'),
-                            mode: LaunchMode.externalApplication);
                       }),
                 ],
               )
@@ -246,7 +245,7 @@ class About extends StatelessWidget {
     );
   }
 
-  Widget _buildSupportSection(AppLocalizations l10n) {
+  Widget _buildSupportSection(BuildContext context, AppLocalizations l10n) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -280,7 +279,7 @@ class About extends StatelessWidget {
               borderRadius: BorderRadius.circular(32.0),
               onTap: () {
                 launchUrl(
-                  Uri.parse("https://beatlabs790.github.io/beatwavepc/"),
+                  Uri.parse("https://akshansh.vercel.app"),
                   mode: LaunchMode.externalApplication,
                 );
               },
@@ -312,6 +311,46 @@ class About extends StatelessWidget {
                   ],
                 ),
               ),
+            ),
+          ),
+        ),
+        const SizedBox(height: 16),
+        InkWell(
+          borderRadius: BorderRadius.circular(12),
+          onTap: () {
+            Clipboard.setData(const ClipboardData(text: 'akshanshsinha67@axl'));
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('UPI ID copied to clipboard: akshanshsinha67@axl'),
+                behavior: SnackBarBehavior.floating,
+                duration: Duration(seconds: 2),
+              ),
+            );
+          },
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            decoration: BoxDecoration(
+              color: Colors.white.withValues(alpha: 0.05),
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
+            ),
+            child: const Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(Icons.payment_rounded, color: kSecondaryTextColor, size: 16),
+                SizedBox(width: 8),
+                Text(
+                  'UPI: akshanshsinha67@axl',
+                  style: TextStyle(
+                    color: kPrimaryTextColor,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Gilroy',
+                  ),
+                ),
+                SizedBox(width: 8),
+                Icon(Icons.copy_rounded, color: kSecondaryTextColor, size: 14),
+              ],
             ),
           ),
         ),
