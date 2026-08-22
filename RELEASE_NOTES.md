@@ -9,6 +9,10 @@ Welcome to the **BeatWave v2.0.0** release! This major update introduces key UI 
 ### 🖱️ Global Mouse Scroll Inversion
 * **Scroll Wheel Direction**: Integrated a low-level input signal interceptor inside the main engine binding. For desktop users, this inverts all mouse scroll wheel inputs globally across all views (both vertical and horizontal directions) while leaving touch-screen drag gestures intact.
 
+### 🎨 Overall Visual Redesign
+* **Modernized UI Aesthetics**: Fully overhauled the interface with elegant gradients, glassmorphism layouts, frosted glass info-cards, and enhanced element contrasts for a refined visual experience.
+* **Refined Layout Structure**: Repositioned app branding details, updated footer displays, and enhanced spacing variables to provide a clean and professional presentation.
+
 ### 📱 Redesigned About Screen
 * **Logo Showcase**: Highlighted the new app logo directly at the top of the information card.
 * **Developer Spotlight**: Added direct link navigation to your Instagram handle: **[@vortex.apps](https://instagram.com/vortex.apps)**.
