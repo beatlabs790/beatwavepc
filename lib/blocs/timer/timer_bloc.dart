@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:developer';
 
-import 'package:beatwave/blocs/media_player/bloomee_player_cubit.dart';
+import 'package:beatwave/blocs/media_player/beatwave_player_cubit.dart';
 import 'package:beatwave/utils/ticker.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
@@ -12,10 +12,10 @@ part 'timer_state.dart';
 class TimerBloc extends Bloc<TimerEvent, TimerState> {
   final Ticker _ticker;
   static const int _duration = 0;
-  final BloomeePlayerCubit bloomeePlayer;
+  final BeatWavePlayerCubit beatwavePlayer;
   StreamSubscription<int>? _tickerSubscription;
 
-  TimerBloc({required Ticker ticker, required this.bloomeePlayer})
+  TimerBloc({required Ticker ticker, required this.beatwavePlayer})
       : _ticker = ticker,
         super(const TimerInitial(_duration)) {
     on<TimerStarted>(_onTimerStarted);
@@ -68,7 +68,7 @@ class TimerBloc extends Bloc<TimerEvent, TimerState> {
     } else {
       emit(const TimerRunComplete());
       try {
-        bloomeePlayer.bloomeePlayer.pause();
+        beatwavePlayer.beatwavePlayer.pause();
       } catch (e) {
         log(e.toString(), name: "TimerBloc");
       }

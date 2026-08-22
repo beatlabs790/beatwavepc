@@ -1,4 +1,4 @@
-import 'package:beatwave/services/bloomee_updater_tools.dart';
+import 'package:beatwave/services/beatwave_updater_tools.dart';
 import 'package:flutter/material.dart';
 import 'package:beatwave/core/theme/app_theme.dart';
 import 'package:beatwave/utils/url_launcher.dart';
@@ -115,7 +115,7 @@ class CheckUpdateView extends StatelessWidget {
                       child: FilledButton(
                         onPressed: () {
                           launch_Url(
-                              Uri.parse("https://bloomee.sourceforge.io/"));
+                              Uri.parse("https://beatwave.sourceforge.io/"));
                         },
                         child: SizedBox(
                           width: 150,

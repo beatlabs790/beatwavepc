@@ -2,7 +2,7 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:beatwave/blocs/add_to_playlist/cubit/add_to_playlist_cubit.dart';
-import 'package:beatwave/blocs/media_player/bloomee_player_cubit.dart';
+import 'package:beatwave/blocs/media_player/beatwave_player_cubit.dart';
 import 'package:beatwave/blocs/mini_player/mini_player_cubit.dart';
 import 'package:beatwave/blocs/player_overlay/player_overlay_cubit.dart';
 import 'package:beatwave/core/constants/route_paths.dart';
@@ -130,7 +130,7 @@ class _MiniPlayerCardState extends State<MiniPlayerCard>
 
   void _onHorizontalDragEnd(DragEndDetails details) {
     final velocity = details.primaryVelocity ?? 0;
-    final player = context.read<BloomeePlayerCubit>().bloomeePlayer;
+    final player = context.read<BeatWavePlayerCubit>().beatwavePlayer;
 
     if (_dragOffset < -_swipeThreshold || velocity < -600) {
       HapticFeedback.mediumImpact();
@@ -201,8 +201,8 @@ class _MiniPlayerCardState extends State<MiniPlayerCard>
                             onPressed: () {
                               HapticFeedback.lightImpact();
                               context
-                                  .read<BloomeePlayerCubit>()
-                                  .bloomeePlayer
+                                  .read<BeatWavePlayerCubit>()
+                                  .beatwavePlayer
                                   .skipToPrevious();
                             },
                           ),
@@ -214,8 +214,8 @@ class _MiniPlayerCardState extends State<MiniPlayerCard>
                             onPressed: () {
                               HapticFeedback.lightImpact();
                               context
-                                  .read<BloomeePlayerCubit>()
-                                  .bloomeePlayer
+                                  .read<BeatWavePlayerCubit>()
+                                  .beatwavePlayer
                                   .skipToNext();
                             },
                           ),
@@ -481,7 +481,7 @@ class _PlayPauseButton extends StatelessWidget {
         size: 22,
         onPressed: () {
           HapticFeedback.mediumImpact();
-          context.read<BloomeePlayerCubit>().bloomeePlayer.rewind();
+          context.read<BeatWavePlayerCubit>().beatwavePlayer.rewind();
         },
       );
     }
@@ -490,8 +490,8 @@ class _PlayPauseButton extends StatelessWidget {
       onTap: () {
         HapticFeedback.lightImpact();
         state.isPlaying
-            ? context.read<BloomeePlayerCubit>().bloomeePlayer.pause()
-            : context.read<BloomeePlayerCubit>().bloomeePlayer.play();
+            ? context.read<BeatWavePlayerCubit>().beatwavePlayer.pause()
+            : context.read<BeatWavePlayerCubit>().beatwavePlayer.play();
       },
       child: Container(
         width: 42,
@@ -562,7 +562,7 @@ class _GlowingProgressBar extends StatelessWidget {
       right: 0,
       height: 3,
       child: StreamBuilder<ProgressBarStreams>(
-        stream: context.watch<BloomeePlayerCubit>().progressStreams,
+        stream: context.watch<BeatWavePlayerCubit>().progressStreams,
         builder: (context, snapshot) {
           double fraction = 0;
           if (snapshot.hasData && snapshot.data!.duration != Duration.zero) {

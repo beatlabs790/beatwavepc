@@ -18,7 +18,7 @@ String convertJsonToM3U(Map<String, dynamic> jsonData) {
     if (meta == null) {
       throw const FormatException("Missing '_meta' section in JSON.");
     }
-    final generatedBy = meta['generated_by']?.toString() ?? "Bloomee";
+    final generatedBy = meta['generated_by']?.toString() ?? "BeatWave";
     final version = meta['version']?.toString() ?? "Unknown";
     final exportedAt = meta['exportedAt']?.toString() ?? "Unknown";
     final note = meta['note']?.toString() ?? "";
@@ -41,11 +41,11 @@ String convertJsonToM3U(Map<String, dynamic> jsonData) {
     buffer.writeln("#PLAYLIST: $playlistName");
     buffer.writeln();
 
-    // Custom Bloomee metadata (ignored by standard M3U players).
-    buffer.writeln("#BLOOMEE-GENERATED_BY: $generatedBy");
-    buffer.writeln("#BLOOMEE-VERSION: $version");
-    buffer.writeln("#BLOOMEE-EXPORTEDAT: $exportedAt");
-    buffer.writeln("#BLOOMEE-NOTE: $note");
+    // Custom BeatWave metadata (ignored by standard M3U players).
+    buffer.writeln("#BEATWAVE-GENERATED_BY: $generatedBy");
+    buffer.writeln("#BEATWAVE-VERSION: $version");
+    buffer.writeln("#BEATWAVE-EXPORTEDAT: $exportedAt");
+    buffer.writeln("#BEATWAVE-NOTE: $note");
     buffer.writeln();
 
     // Process each media item.
@@ -120,14 +120,13 @@ Map<String, dynamic> parseM3UToJson(String m3uContent) {
     for (final line in lines) {
       if (line.isEmpty) continue;
 
-      // Handle custom meta tags
-      if (line.startsWith('#BLOOMEE-GENERATED_BY:')) {
+      if (line.startsWith('#BLOOMEE-GENERATED_BY:') || line.startsWith('#BEATWAVE-GENERATED_BY:')) {
         meta['generated_by'] = line.split(':').last.trim();
-      } else if (line.startsWith('#BLOOMEE-VERSION:')) {
+      } else if (line.startsWith('#BLOOMEE-VERSION:') || line.startsWith('#BEATWAVE-VERSION:')) {
         meta['version'] = line.split(':').last.trim();
-      } else if (line.startsWith('#BLOOMEE-EXPORTEDAT:')) {
+      } else if (line.startsWith('#BLOOMEE-EXPORTEDAT:') || line.startsWith('#BEATWAVE-EXPORTEDAT:')) {
         meta['exportedAt'] = line.split(':').last.trim();
-      } else if (line.startsWith('#BLOOMEE-NOTE:')) {
+      } else if (line.startsWith('#BLOOMEE-NOTE:') || line.startsWith('#BEATWAVE-NOTE:')) {
         meta['note'] = line.split(':').last.trim();
       } else if (line.startsWith('#PLAYLIST:')) {
         playlistName = line.split(':').last.trim();

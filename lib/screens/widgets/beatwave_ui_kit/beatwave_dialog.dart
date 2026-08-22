@@ -3,57 +3,57 @@ import 'package:beatwave/core/theme/app_theme.dart';
 import 'package:beatwave/utils/load_image.dart';
 import 'package:flutter/material.dart';
 
-/// Bloomee-branded dialog surface.
+/// BeatWave-branded dialog surface.
 ///
 /// Uses the app's dark palette with a subtle frosted-glass look.
 /// All app dialogs, alerts, confirmation sheets, and popups should use this
 /// as their root surface so the UI feels cohesive.
 ///
 /// ```dart
-/// showBloomeeDialog(
+/// showBeatWaveDialog(
 ///   context: context,
 ///   title: 'Delete track?',
 ///   subtitle: 'This cannot be undone.',
 ///   actions: [
-///     BloomeeDialogAction.text('Cancel'),
-///     BloomeeDialogAction.filled('Delete', isDestructive: true, onPressed: () {}),
+///     BeatWaveDialogAction.text('Cancel'),
+///     BeatWaveDialogAction.filled('Delete', isDestructive: true, onPressed: () {}),
 ///   ],
 /// );
 /// ```
-class BloomeeDialogAction {
+class BeatWaveDialogAction {
   final String label;
   final VoidCallback? onPressed;
   final bool isDestructive;
   final bool isFilled;
 
-  const BloomeeDialogAction.text(
+  const BeatWaveDialogAction.text(
     this.label, {
     this.onPressed,
     this.isDestructive = false,
   }) : isFilled = false;
 
-  const BloomeeDialogAction.filled(
+  const BeatWaveDialogAction.filled(
     this.label, {
     this.onPressed,
     this.isDestructive = false,
   }) : isFilled = true;
 }
 
-/// Display the standard Bloomee dialog.
-Future<T?> showBloomeeDialog<T>({
+/// Display the standard BeatWave dialog.
+Future<T?> showBeatWaveDialog<T>({
   required BuildContext context,
   required String title,
   String? subtitle,
   Widget? body,
   IconData? icon,
-  List<BloomeeDialogAction>? actions,
+  List<BeatWaveDialogAction>? actions,
   bool barrierDismissible = true,
 }) {
   return showDialog<T>(
     context: context,
     barrierDismissible: barrierDismissible,
     barrierColor: Colors.black54,
-    builder: (_) => BloomeeDialogSurface(
+    builder: (_) => BeatWaveDialogSurface(
       title: title,
       subtitle: subtitle,
       body: body,
@@ -71,14 +71,14 @@ const _kDialogBorder = Color(0xFF2A2438);
 
 /// The dialog surface widget. Can be used directly as a dialog builder return
 /// value for dialogs that manage their own state (e.g., Smart Replace).
-class BloomeeDialogSurface extends StatelessWidget {
+class BeatWaveDialogSurface extends StatelessWidget {
   final String title;
   final String? subtitle;
   final Widget? body;
   final IconData? icon;
-  final List<BloomeeDialogAction>? actions;
+  final List<BeatWaveDialogAction>? actions;
 
-  const BloomeeDialogSurface({
+  const BeatWaveDialogSurface({
     super.key,
     required this.title,
     this.subtitle,
@@ -200,7 +200,7 @@ class BloomeeDialogSurface extends StatelessWidget {
     );
   }
 
-  Widget _buildAction(BuildContext context, BloomeeDialogAction action) {
+  Widget _buildAction(BuildContext context, BeatWaveDialogAction action) {
     final color = action.isDestructive
         ? const Color(0xFFFF4D6A)
         : Default_Theme.accentColor2;
@@ -244,11 +244,11 @@ class BloomeeDialogSurface extends StatelessWidget {
   }
 }
 
-/// A Bloomee-styled list-tile for use inside dialog bodies.
+/// A BeatWave-styled list-tile for use inside dialog bodies.
 ///
 /// Shows a leading thumbnail/icon, title, subtitle, and an optional trailing
 /// widget. Used for candidate lists (Smart Replace, search picks, etc.).
-class BloomeeDialogTile extends StatelessWidget {
+class BeatWaveDialogTile extends StatelessWidget {
   final String title;
   final String? subtitle;
   final String? imageUrl;
@@ -257,7 +257,7 @@ class BloomeeDialogTile extends StatelessWidget {
   final VoidCallback? onTap;
   final bool selected;
 
-  const BloomeeDialogTile({
+  const BeatWaveDialogTile({
     super.key,
     required this.title,
     this.subtitle,
@@ -369,11 +369,11 @@ class BloomeeDialogTile extends StatelessWidget {
 }
 
 /// A small pill badge (e.g., "Best match", "79%").
-class BloomeeDialogBadge extends StatelessWidget {
+class BeatWaveDialogBadge extends StatelessWidget {
   final String label;
   final Color? color;
 
-  const BloomeeDialogBadge(this.label, {super.key, this.color});
+  const BeatWaveDialogBadge(this.label, {super.key, this.color});
 
   @override
   Widget build(BuildContext context) {

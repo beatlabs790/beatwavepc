@@ -52,7 +52,7 @@ class VolumeFader {
       final now = DateTime.now().millisecondsSinceEpoch;
       final frac = ((now - startMs) / (endMs - startMs)).clamp(0.0, 1.0);
       final vol = startVol + (endVol - startVol) * frac;
-      // Fire and forget — do NOT await. Awaiting here would back-pressure the timer.
+      // Fire and forget ï¿½ do NOT await. Awaiting here would back-pressure the timer.
       player.setVolume(vol.clamp(0.0, 100.0));
       if (frac >= 1.0) t.cancel();
     });
@@ -154,10 +154,10 @@ class PlayerEngine {
   PlayerEngine() {
     _playerA = Player(
         configuration: const PlayerConfiguration(
-            title: 'BloomeeTunes', bufferSize: 16 * 1024 * 1024));
+            title: 'BeatWave', bufferSize: 16 * 1024 * 1024));
     _playerB = Player(
         configuration: const PlayerConfiguration(
-            title: 'BloomeeTunes', bufferSize: 16 * 1024 * 1024));
+            title: 'BeatWave', bufferSize: 16 * 1024 * 1024));
 
     _configureNativePlayer(_playerA);
     _configureNativePlayer(_playerB);

@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:beatwave/blocs/history/cubit/history_cubit.dart';
-import 'package:beatwave/blocs/media_player/bloomee_player_cubit.dart';
+import 'package:beatwave/blocs/media_player/beatwave_player_cubit.dart';
 import 'package:beatwave/core/models/media_playlist_model.dart';
 import 'package:beatwave/screens/screen/home_views/setting_views/storage_setting.dart';
 import 'package:beatwave/screens/widgets/more_bottom_sheet.dart';
@@ -61,8 +61,8 @@ class HistoryView extends StatelessWidget {
                         song: state.tracks[index],
                         onTap: () {
                           context
-                              .read<BloomeePlayerCubit>()
-                              .bloomeePlayer
+                              .read<BeatWavePlayerCubit>()
+                              .beatwavePlayer
                               .loadPlaylist(
                                   Playlist(
                                       tracks: state.tracks, title: 'History'),

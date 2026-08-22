@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:ui';
 
-import 'package:beatwave/blocs/media_player/bloomee_player_cubit.dart';
+import 'package:beatwave/blocs/media_player/beatwave_player_cubit.dart';
 import 'package:beatwave/core/di/service_locator.dart';
 import 'package:beatwave/core/events/global_event_bus.dart';
 import 'package:beatwave/core/models/exported.dart';
@@ -381,8 +381,8 @@ class _ArtistViewState extends State<ArtistView> {
                       ),
                       onTap: () {
                         context
-                            .read<BloomeePlayerCubit>()
-                            .bloomeePlayer
+                            .read<BeatWavePlayerCubit>()
+                            .beatwavePlayer
                             .loadPlaylist(
                               Playlist(tracks: topTracks, title: artistName),
                               doPlay: true,
@@ -635,8 +635,8 @@ class _ArtistHeaderContent extends StatelessWidget {
               onTap: topTracks.isEmpty
                   ? null
                   : () => context
-                      .read<BloomeePlayerCubit>()
-                      .bloomeePlayer
+                      .read<BeatWavePlayerCubit>()
+                      .beatwavePlayer
                       .loadPlaylist(
                         Playlist(tracks: topTracks, title: title),
                         doPlay: true,

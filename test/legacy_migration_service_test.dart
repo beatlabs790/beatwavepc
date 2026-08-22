@@ -39,7 +39,7 @@ void main() {
     test('migrates legacy data into dbv3 and validates visible app state',
         () async {
       tempRoot = await Directory.systemTemp.createTemp(
-        'bloomee_legacy_migration_test_',
+        'beatwave_legacy_migration_test_',
       );
       supportDir = Directory(p.join(tempRoot.path, 'support'))
         ..createSync(recursive: true);

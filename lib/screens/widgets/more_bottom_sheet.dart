@@ -10,7 +10,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:beatwave/blocs/add_to_playlist/cubit/add_to_playlist_cubit.dart';
 import 'package:beatwave/blocs/downloader/cubit/downloader_cubit.dart';
 import 'package:beatwave/blocs/library/cubit/library_items_cubit.dart';
-import 'package:beatwave/blocs/media_player/bloomee_player_cubit.dart';
+import 'package:beatwave/blocs/media_player/beatwave_player_cubit.dart';
 import 'package:beatwave/core/constants/route_paths.dart';
 import 'package:beatwave/core/models/exported.dart';
 import 'package:beatwave/core/theme/app_theme.dart';
@@ -29,7 +29,7 @@ void showMoreBottomSheet(
   bool showPlayNext = true,
   VoidCallback? onDelete,
 }) {
-  final playerCubit = context.read<BloomeePlayerCubit>();
+  final playerCubit = context.read<BeatWavePlayerCubit>();
   final libraryCubit = context.read<LibraryItemsCubit>();
   final playlistCubit = context.read<AddToPlaylistCubit>();
   final downloaderCubit = context.read<DownloaderCubit>();
@@ -158,8 +158,8 @@ class _TrackOptionsBottomSheet extends StatelessWidget {
                                         Theme.of(context).colorScheme.primary,
                                     onTap: (ctx) {
                                       ctx
-                                          .read<BloomeePlayerCubit>()
-                                          .bloomeePlayer
+                                          .read<BeatWavePlayerCubit>()
+                                          .beatwavePlayer
                                           .updateQueueTracks([song],
                                               doPlay: true);
                                       Navigator.pop(ctx);
@@ -175,8 +175,8 @@ class _TrackOptionsBottomSheet extends StatelessWidget {
                                         Theme.of(context).colorScheme.tertiary,
                                     onTap: (ctx) {
                                       ctx
-                                          .read<BloomeePlayerCubit>()
-                                          .bloomeePlayer
+                                          .read<BeatWavePlayerCubit>()
+                                          .beatwavePlayer
                                           .addPlayNextTrack(song);
                                       Navigator.pop(ctx);
                                       SnackbarService.showMessage(
@@ -191,8 +191,8 @@ class _TrackOptionsBottomSheet extends StatelessWidget {
                                         Theme.of(context).colorScheme.secondary,
                                     onTap: (ctx) {
                                       ctx
-                                          .read<BloomeePlayerCubit>()
-                                          .bloomeePlayer
+                                          .read<BeatWavePlayerCubit>()
+                                          .beatwavePlayer
                                           .addQueueTracks([song]);
                                       Navigator.pop(ctx);
                                       SnackbarService.showMessage(
@@ -240,7 +240,7 @@ class _TrackOptionsBottomSheet extends StatelessWidget {
                             title: l10n.songInfoUpdateMetadata,
                             onTap: (ctx) async {
                               final player =
-                                  ctx.read<BloomeePlayerCubit>().bloomeePlayer;
+                                  ctx.read<BeatWavePlayerCubit>().beatwavePlayer;
                               Navigator.pop(ctx);
 
                               final result =

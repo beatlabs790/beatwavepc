@@ -105,8 +105,8 @@ class BackupSettings extends StatelessWidget {
                                   SharePlus.instance
                                       .share(ShareParams(
                                     files: [XFile(value)],
-                                    text: 'Bloomee backup file',
-                                    subject: 'Bloomee Backup',
+                                    text: 'BeatWave backup file',
+                                    subject: 'BeatWave Backup',
                                   ))
                                       .catchError((e) {
                                     SnackbarService.showMessage(
@@ -142,8 +142,8 @@ class BackupSettings extends StatelessWidget {
                                   SharePlus.instance
                                       .share(ShareParams(
                                     files: [XFile(value)],
-                                    text: 'Bloomee JSON backup file',
-                                    subject: 'Bloomee JSON Backup',
+                                    text: 'BeatWave JSON backup file',
+                                    subject: 'BeatWave JSON Backup',
                                   ))
                                       .catchError((e) {
                                     SnackbarService.showMessage(
@@ -599,7 +599,7 @@ Future<String?> _savePickedFileToInternalDir(PlatformFile picked) async {
     final docs = await getApplicationDocumentsDirectory();
     final safeName = picked.name.replaceAll(RegExp(r'[^A-Za-z0-9_.-]'), '_');
     final filename =
-        'bloomee_restore_${DateTime.now().millisecondsSinceEpoch}_$safeName';
+        'beatwave_restore_${DateTime.now().millisecondsSinceEpoch}_$safeName';
     final dest = File('${docs.path}/$filename');
 
     if (picked.bytes != null) {

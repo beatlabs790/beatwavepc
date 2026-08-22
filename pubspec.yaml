@@ -106,16 +106,16 @@ flutter_launcher_icons:
   android: true
   ios: true
   adaptive_icon_background: "#121212"
-  adaptive_icon_foreground: "assets/icons/bloomee_new_logo_c.png"
-  image_path: "assets/icons/bloomee_new_logo_c.png"
+  adaptive_icon_foreground: "assets/icons/beatwave_new_logo_c.png"
+  image_path: "assets/icons/beatwave_new_logo_c.png"
   min_sdk_android: 21 # android min sdk min:16, default 21
 
   macos:
     generate: true
-    image_path: "assets/icons/bloomee_new_logo_c.png"
+    image_path: "assets/icons/beatwave_new_logo_c.png"
   windows:
     generate: true
-    image_path: "assets/icons/bloomee_new_logo_c.png"
+    image_path: "assets/icons/beatwave_new_logo_c.png"
     
 
 # The following section is specific to Flutter packages.
@@ -125,9 +125,9 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/icons/bloomee_new_logo_c.png
+    - assets/icons/beatwave_new_logo_c.png
     - assets/icons/lazy_loading.png
-    - assets/icons/BloomeeLogoFG.png
+    - assets/icons/BeatWaveLogoFG.png
     
   fonts:
     - family: Unageo

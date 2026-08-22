@@ -5,7 +5,7 @@ import 'package:beatwave/plugins/blocs/plugin/plugin_bloc.dart';
 import 'package:beatwave/plugins/blocs/plugin/plugin_event.dart';
 import 'package:beatwave/plugins/blocs/plugin/plugin_state.dart';
 import 'package:beatwave/screens/widgets/animated_list_item.dart';
-import 'package:beatwave/screens/widgets/bloomee_ui_kit/bloomee_dialog.dart';
+import 'package:beatwave/screens/widgets/beatwave_ui_kit/beatwave_dialog.dart';
 import 'package:beatwave/screens/widgets/sign_board_widget.dart';
 import 'package:beatwave/screens/widgets/snackbar.dart';
 import 'package:beatwave/src/rust/api/plugin/manifest.dart';
@@ -1008,14 +1008,14 @@ class _PluginDetailSheet extends StatelessWidget {
     final bloc = context.read<PluginBloc>();
     final l10n = AppLocalizations.of(context)!;
 
-    showBloomeeDialog(
+    showBeatWaveDialog(
       context: context,
       title: l10n.pluginManagerDeleteTitle,
       subtitle: l10n.pluginManagerDeleteMessage(pluginName),
       icon: Icons.delete_outline_rounded,
       actions: [
-        BloomeeDialogAction.text(l10n.pluginManagerCancel),
-        BloomeeDialogAction.filled(
+        BeatWaveDialogAction.text(l10n.pluginManagerCancel),
+        BeatWaveDialogAction.filled(
           l10n.pluginManagerDeleteAction,
           isDestructive: true,
           onPressed: () {
@@ -1035,13 +1035,13 @@ class _PluginDetailSheet extends StatelessWidget {
   void _confirmStorageCleanup(BuildContext context, PluginBloc bloc,
       String pluginId, String pluginName) {
     final l10n = AppLocalizations.of(context)!;
-    showBloomeeDialog(
+    showBeatWaveDialog(
       context: context,
       title: l10n.pluginManagerDeleteStorageTitle,
       subtitle: l10n.pluginManagerDeleteStorageMessage(pluginName),
       icon: Icons.storage_outlined,
       actions: [
-        BloomeeDialogAction.text(
+        BeatWaveDialogAction.text(
           l10n.pluginManagerDeleteStorageKeep,
           onPressed: () {
             if (context.mounted) Navigator.of(context).pop();
@@ -1051,7 +1051,7 @@ class _PluginDetailSheet extends StatelessWidget {
                 cleanStorage: false));
           },
         ),
-        BloomeeDialogAction.filled(
+        BeatWaveDialogAction.filled(
           l10n.pluginManagerDeleteStorageRemove,
           isDestructive: true,
           onPressed: () {

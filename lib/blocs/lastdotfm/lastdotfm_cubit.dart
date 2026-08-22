@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:developer';
-import 'package:beatwave/blocs/media_player/bloomee_player_cubit.dart';
+import 'package:beatwave/blocs/media_player/beatwave_player_cubit.dart';
 import 'package:beatwave/core/models/exported.dart';
 import 'package:beatwave/core/constants/sentinel_values.dart';
 import 'package:beatwave/repository/LastFM/lastfmapi.dart';
@@ -20,7 +20,7 @@ part 'lastdotfm_state.dart';
 class LastdotfmCubit extends Cubit<LastdotfmState> {
   LastFmAPI lastFmAPI = LastFmAPI();
   StreamSubscription? _progressSub;
-  BloomeePlayerCubit playerCubit;
+  BeatWavePlayerCubit playerCubit;
   final CacheDAO _cacheDao;
   final SettingsDAO _settingsDao;
   final PluginService _pluginService;
@@ -68,7 +68,7 @@ class LastdotfmCubit extends Cubit<LastdotfmState> {
   }
 
   void _onProgressTick() {
-    final player = playerCubit.bloomeePlayer;
+    final player = playerCubit.beatwavePlayer;
     final current = player.currentMedia;
     final isPlaying = player.engine.playing;
 

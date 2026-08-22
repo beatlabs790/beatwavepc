@@ -1,7 +1,7 @@
-import 'package:beatwave/blocs/media_player/bloomee_player_cubit.dart';
+import 'package:beatwave/blocs/media_player/beatwave_player_cubit.dart';
 import 'package:beatwave/core/theme/app_theme.dart';
 import 'package:beatwave/screens/screen/library_views/cubit/current_playlist_cubit.dart';
-import 'package:beatwave/screens/widgets/bloomee_ui_kit/bloomee_dialog.dart';
+import 'package:beatwave/screens/widgets/beatwave_ui_kit/beatwave_dialog.dart';
 import 'package:beatwave/screens/widgets/snackbar.dart';
 import 'package:beatwave/services/meta_resolver/smart_track_replacement_service.dart';
 import 'package:beatwave/src/rust/api/plugin/models.dart';
@@ -36,7 +36,7 @@ class _SmartReplaceDialogState extends State<_SmartReplaceDialog> {
   void initState() {
     super.initState();
     _service = SmartTrackReplacementService.create(
-      context.read<BloomeePlayerCubit>().bloomeePlayer.pluginService,
+      context.read<BeatWavePlayerCubit>().beatwavePlayer.pluginService,
     );
     _future = _service.searchCandidates(widget.track);
   }
@@ -44,12 +44,12 @@ class _SmartReplaceDialogState extends State<_SmartReplaceDialog> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    return BloomeeDialogSurface(
+    return BeatWaveDialogSurface(
       title: l10n.smartReplaceTitle,
       subtitle: l10n.smartReplaceSubtitle(widget.track.title),
       icon: MingCute.transfer_4_line,
       actions: [
-        BloomeeDialogAction.text(l10n.smartReplaceClose),
+        BeatWaveDialogAction.text(l10n.smartReplaceClose),
       ],
       body: FutureBuilder<List<SmartTrackReplacementCandidate>>(
         future: _future,
@@ -102,7 +102,7 @@ class _SmartReplaceDialogState extends State<_SmartReplaceDialog> {
                 final thumbUrl = candidate.track.thumbnail.urlLow ??
                     candidate.track.thumbnail.url;
 
-                return BloomeeDialogTile(
+                return BeatWaveDialogTile(
                   title: candidate.track.title,
                   subtitle: artistNames.isEmpty
                       ? candidate.pluginName
@@ -118,7 +118,7 @@ class _SmartReplaceDialogState extends State<_SmartReplaceDialog> {
                       if (index == 0)
                         Padding(
                           padding: const EdgeInsets.only(right: 8),
-                          child: BloomeeDialogBadge(l10n.smartReplaceBestMatch),
+                          child: BeatWaveDialogBadge(l10n.smartReplaceBestMatch),
                         ),
                       isApplying
                           ? const SizedBox(
@@ -129,7 +129,7 @@ class _SmartReplaceDialogState extends State<_SmartReplaceDialog> {
                                 color: Default_Theme.accentColor2,
                               ),
                             )
-                          : BloomeeDialogBadge(
+                          : BeatWaveDialogBadge(
                               '${(candidate.confidence * 100).round()}%'),
                     ],
                   ),
@@ -148,7 +148,7 @@ class _SmartReplaceDialogState extends State<_SmartReplaceDialog> {
   ) async {
     final l10n = AppLocalizations.of(context)!;
     setState(() => _applyingTrackId = candidate.track.id);
-    final player = context.read<BloomeePlayerCubit>().bloomeePlayer;
+    final player = context.read<BeatWavePlayerCubit>().beatwavePlayer;
 
     try {
       final applyResult = await _service.applyReplacement(

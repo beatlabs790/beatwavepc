@@ -31,7 +31,7 @@
 - **New Plugin Runtime [bex]**: Introduced a Rust-backed plugin system built with waclay + wasmi, loading, unloading, execution, and updates.
 - **Lyrics Viewer + Lyrics Offset**: You can now offset lyrics if lyrics are not syncing up.
 - **Equalizer support now available**: Equalizer support is now available for all devices😊.
-- **Languages support is expanding**: Strings are localized so soon you will have bloomee in your own languages.
+- **Languages support is expanding**: Strings are localized so soon you will have beatwave in your own languages.
 - **Karaoke style Lyrics**: Bydefault we will now have karaoke style lyrics player.
 - **Playlist ordering and pinning**: Playlists in library can now be pinned or reordered as user wants.
 - **Crossfade support**: Crossfade is now supported for all device.

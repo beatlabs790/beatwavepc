@@ -9,7 +9,7 @@ import 'package:share_plus/share_plus.dart';
 import 'package:file_picker/file_picker.dart';
 
 import 'package:beatwave/blocs/library/cubit/library_items_cubit.dart';
-import 'package:beatwave/blocs/media_player/bloomee_player_cubit.dart';
+import 'package:beatwave/blocs/media_player/beatwave_player_cubit.dart';
 import 'package:beatwave/core/models/media_playlist_model.dart';
 import 'package:beatwave/screens/screen/library_views/cubit/current_playlist_cubit.dart';
 import 'package:beatwave/screens/screen/library_views/playlist_edit_view.dart';
@@ -147,11 +147,11 @@ class _PlaylistOptionsSheet extends StatelessWidget {
                                       final libraryCubit =
                                           ctx.read<LibraryItemsCubit>();
                                       final playerCubit =
-                                          ctx.read<BloomeePlayerCubit>();
+                                          ctx.read<BeatWavePlayerCubit>();
                                       final list = await libraryCubit
                                           .getPlaylistTracks(title);
                                       if (list != null && list.isNotEmpty) {
-                                        playerCubit.bloomeePlayer.loadPlaylist(
+                                        playerCubit.beatwavePlayer.loadPlaylist(
                                             Playlist(
                                                 tracks: list, title: title),
                                             doPlay: true);
@@ -167,11 +167,11 @@ class _PlaylistOptionsSheet extends StatelessWidget {
                                       final libraryCubit =
                                           ctx.read<LibraryItemsCubit>();
                                       final playerCubit =
-                                          ctx.read<BloomeePlayerCubit>();
+                                          ctx.read<BeatWavePlayerCubit>();
                                       final list = await libraryCubit
                                           .getPlaylistTracks(title);
                                       if (list != null && list.isNotEmpty) {
-                                        playerCubit.bloomeePlayer
+                                        playerCubit.beatwavePlayer
                                             .addQueueTracks(list);
                                         SnackbarService.showMessage(
                                             l10n.snackbarPlaylistAddedToQueue(

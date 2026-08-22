@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:beatwave/blocs/media_player/bloomee_player_cubit.dart';
+import 'package:beatwave/blocs/media_player/beatwave_player_cubit.dart';
 import 'package:beatwave/blocs/settings_cubit/cubit/settings_cubit.dart';
 import 'package:beatwave/core/constants/setting_keys.dart';
 import 'package:beatwave/core/theme/app_theme.dart';
@@ -71,14 +71,14 @@ class _EqualizerViewState extends State<EqualizerView>
   bool _isGraphInteractive = false;
 
   // FIX L-01: Reactive subscriptions so the view stays in sync with engine state
-  // changes from external code (settings restore, revive, Bloomee settings page).
+  // changes from external code (settings restore, revive, BeatWave settings page).
   StreamSubscription? _eqEnabledSub;
   StreamSubscription? _eqGainsSub;
 
   @override
   void initState() {
     super.initState();
-    _engine = context.read<BloomeePlayerCubit>().bloomeePlayer.engine;
+    _engine = context.read<BeatWavePlayerCubit>().beatwavePlayer.engine;
     _settingsCubit = context.read<SettingsCubit>();
 
     _eqSource = _settingsCubit.state.eqSource;
@@ -426,7 +426,7 @@ class _EqualizerViewState extends State<EqualizerView>
                                             .withValues(alpha: 0.95),
                                         fontSize: 16,
                                         fontWeight: FontWeight.w600)),
-                                BloomeeSwitch(
+                                BeatWaveSwitch(
                                   value: isEnabled,
                                   onChanged: () {
                                     _engine.setEqualizerEnabled(!isEnabled);

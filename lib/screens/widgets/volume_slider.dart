@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:beatwave/blocs/media_player/bloomee_player_cubit.dart';
+import 'package:beatwave/blocs/media_player/beatwave_player_cubit.dart';
 import 'package:beatwave/core/theme/app_theme.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -35,8 +35,8 @@ class _VolumeDragControllerState extends State<VolumeDragController> {
 
   void volumeStrm() {
     _volumeSubscription = context
-        .read<BloomeePlayerCubit>()
-        .bloomeePlayer
+        .read<BeatWavePlayerCubit>()
+        .beatwavePlayer
         .engine
         .volumeStream
         .listen((event) {
@@ -50,7 +50,7 @@ class _VolumeDragControllerState extends State<VolumeDragController> {
     setState(() {
       _volume = volume;
     });
-    context.read<BloomeePlayerCubit>().bloomeePlayer.engine.setVolume(volume);
+    context.read<BeatWavePlayerCubit>().beatwavePlayer.engine.setVolume(volume);
   }
 
   void _onDragStart(DragStartDetails details) {

@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:beatwave/blocs/media_player/bloomee_player_cubit.dart';
+import 'package:beatwave/blocs/media_player/beatwave_player_cubit.dart';
 import 'package:beatwave/blocs/downloader/cubit/downloader_cubit.dart';
 import 'package:beatwave/core/models/media_playlist_model.dart';
 import 'package:beatwave/core/models/exported.dart';
@@ -118,8 +118,8 @@ class _OfflineScreenState extends State<OfflineScreen> {
 
                                 try {
                                   context
-                                      .read<BloomeePlayerCubit>()
-                                      .bloomeePlayer
+                                      .read<BeatWavePlayerCubit>()
+                                      .beatwavePlayer
                                       .loadPlaylist(
                                         Playlist(
                                           tracks: state.downloaded,

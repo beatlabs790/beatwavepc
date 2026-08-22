@@ -9,7 +9,7 @@ import 'package:beatwave/l10n/app_localizations.dart';
 import 'package:beatwave/screens/screen/common_views/song_info_screen.dart';
 import 'package:beatwave/screens/widgets/snackbar.dart';
 import 'package:beatwave/blocs/downloader/cubit/downloader_cubit.dart';
-import 'package:beatwave/blocs/media_player/bloomee_player_cubit.dart';
+import 'package:beatwave/blocs/media_player/beatwave_player_cubit.dart';
 import 'package:beatwave/core/models/exported.dart' hide MediaItem;
 import 'package:beatwave/core/theme/app_theme.dart';
 import 'package:beatwave/screens/widgets/media_metadata_links.dart';
@@ -53,10 +53,10 @@ class SongCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final playerCubit = context.read<BloomeePlayerCubit>();
+    final playerCubit = context.read<BeatWavePlayerCubit>();
 
     return StreamBuilder<MediaItem?>(
-      stream: playerCubit.bloomeePlayer.mediaItem,
+      stream: playerCubit.beatwavePlayer.mediaItem,
       builder: (context, snapshot) {
         final isPlaying = snapshot.data?.id == song.id;
         final l10n = AppLocalizations.of(context)!;
@@ -234,7 +234,7 @@ class SongCardWidget extends StatelessWidget {
                             iconColor: Colors.redAccent.withValues(alpha: 0.9),
                             onTap: () {
                               try {
-                                if (playerCubit.bloomeePlayer.currentMedia.id !=
+                                if (playerCubit.beatwavePlayer.currentMedia.id !=
                                     song.id) {
                                   context
                                       .read<DownloaderCubit>()

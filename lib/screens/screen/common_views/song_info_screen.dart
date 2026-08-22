@@ -14,7 +14,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:iconsx_plus/iconsx_plus.dart';
-import 'package:beatwave/blocs/media_player/bloomee_player_cubit.dart';
+import 'package:beatwave/blocs/media_player/beatwave_player_cubit.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SongInfoScreen extends StatefulWidget {
@@ -67,7 +67,7 @@ class _SongInfoScreenState extends State<SongInfoScreen> {
     try {
       final result = await SongMetadataRefreshService.refreshTrack(
         song,
-        player: context.read<BloomeePlayerCubit>().bloomeePlayer,
+        player: context.read<BeatWavePlayerCubit>().beatwavePlayer,
       );
 
       if (!result.isSuccess || result.track == null) {

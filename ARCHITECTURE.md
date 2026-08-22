@@ -1,4 +1,4 @@
-# Bloomee Architecture
+# BeatWave Architecture
 
 > Authoritative reference for all contributors. All code must conform to the rules in this document.
 
@@ -167,7 +167,7 @@ UI never holds `PlaylistTypeDB`. All enum mapping happens inside DAO calls withi
 
 | Bloc/Cubit | Location | Purpose |
 |---|---|---|
-| `BloomeePlayerCubit` | `blocs/media_player/` | Wraps `BloomeeMusicPlayer`; exposes player state |
+| `BeatWavePlayerCubit` | `blocs/media_player/` | Wraps `BeatWaveMusicPlayer`; exposes player state |
 | `MiniPlayerCubit` | `blocs/mini_player/` | Playback status for the mini-player overlay |
 | `LibraryItemsCubit` | `blocs/library/` | Library list with save/remove operations |
 | `DownloaderCubit` | `blocs/downloader/` | Offline download queue |
@@ -179,7 +179,7 @@ UI never holds `PlaylistTypeDB`. All enum mapping happens inside DAO calls withi
 
 ## 6. Plugin System
 
-Plugins are WebAssembly modules conforming to WIT-defined interfaces, compiled via the `bloomee_plugin_sdk`. The Rust layer (`rust/`) bridges Flutter and the WASM runtime.
+Plugins are WebAssembly modules conforming to WIT-defined interfaces, compiled via the `beatwave_plugin_sdk`. The Rust layer (`rust/`) bridges Flutter and the WASM runtime.
 
 ### Plugin types
 
@@ -247,7 +247,7 @@ Application-lifetime singletons registered in `ServiceLocator` (`get_it`).
 
 | Service | Purpose |
 |---|---|
-| `BloomeeMusicPlayer` | Core audio engine wrapping `audio_service` |
+| `BeatWaveMusicPlayer` | Core audio engine wrapping `audio_service` |
 | `PluginService` | WASM plugin runtime (load/unload/call) |
 | `PluginCacheRepository` | Plugin response cache (L1 + L2) |
 | `EqualizerService` | 10-band parametric EQ via FFmpeg |
@@ -262,7 +262,7 @@ Application-lifetime singletons registered in `ServiceLocator` (`get_it`).
 ```
 App start
   └─ GlobalEventsCubit.checkForUpdates()
-       └─ getAppUpdates()          (services/bloomee_updater_tools.dart)
+       └─ getAppUpdates()          (services/beatwave_updater_tools.dart)
             ├─ GitHub Releases API
             └─ SourceForge fallback
 
@@ -280,7 +280,7 @@ App start
                   │
                   └─ results == true  &&  autoUpdateNotify setting == true
                         → emit UpdateAvailable(newVersion, newBuild, downloadUrl)
-                        → GlobalEventListener: showBloomeeDialog with localised strings
+                        → GlobalEventListener: showBeatWaveDialog with localised strings
                              ├─ "Later" → dismiss
                              └─ "Update Now" → launchUrl(downloadUrl)
 ```

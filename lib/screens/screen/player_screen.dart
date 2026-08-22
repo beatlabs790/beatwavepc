@@ -12,7 +12,7 @@ import 'package:beatwave/screens/widgets/up_next_panel.dart';
 import 'package:beatwave/screens/widgets/volume_slider.dart';
 import 'package:beatwave/screens/widgets/media_metadata_links.dart';
 import 'package:beatwave/screens/screen/player_views/segments_sheet.dart';
-import 'package:beatwave/services/bloomee_player.dart';
+import 'package:beatwave/services/beatwave_player.dart';
 import 'package:audio_service/audio_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,7 +27,7 @@ import 'package:beatwave/utils/load_image.dart';
 import 'package:beatwave/utils/pallete_generator.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../../blocs/media_player/bloomee_player_cubit.dart';
+import '../../blocs/media_player/beatwave_player_cubit.dart';
 import '../../blocs/mini_player/mini_player_cubit.dart';
 import 'player_views/fullscreen_lyrics_view.dart';
 
@@ -66,8 +66,8 @@ class _AudioPlayerViewState extends State<AudioPlayerView>
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final bloomeePlayerCubit = context.read<BloomeePlayerCubit>();
-    final musicPlayer = bloomeePlayerCubit.bloomeePlayer;
+    final beatwavePlayerCubit = context.read<BeatWavePlayerCubit>();
+    final musicPlayer = beatwavePlayerCubit.beatwavePlayer;
     final isMobile = ResponsiveBreakpoints.of(context).smallerOrEqualTo(TABLET);
 
     return Scaffold(
@@ -200,7 +200,7 @@ class _AudioPlayerViewState extends State<AudioPlayerView>
 }
 
 class _PlayerUI extends StatelessWidget {
-  final BloomeeMusicPlayer musicPlayer;
+  final BeatWaveMusicPlayer musicPlayer;
   final TabController tabController;
 
   const _PlayerUI({
@@ -256,14 +256,14 @@ class CoverImageVolSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bloomeePlayerCubit = context.read<BloomeePlayerCubit>();
+    final beatwavePlayerCubit = context.read<BeatWavePlayerCubit>();
 
     return VolumeDragController(
       child: StreamBuilder<MediaItem?>(
-        stream: bloomeePlayerCubit.bloomeePlayer.mediaItem,
+        stream: beatwavePlayerCubit.beatwavePlayer.mediaItem,
         builder: (context, snapshot) {
           final currentTrack =
-              bloomeePlayerCubit.bloomeePlayer.currentTrackInfo;
+              beatwavePlayerCubit.beatwavePlayer.currentTrackInfo;
           final highResUrl =
               currentTrack.thumbnail.urlHigh ?? currentTrack.thumbnail.url;
           final lowResUrl =
@@ -291,7 +291,7 @@ class CoverImageVolSlider extends StatelessWidget {
 }
 
 class PlayerCtrlWidgets extends StatelessWidget {
-  final BloomeeMusicPlayer musicPlayer;
+  final BeatWaveMusicPlayer musicPlayer;
   const PlayerCtrlWidgets({super.key, required this.musicPlayer});
 
   @override
@@ -317,7 +317,7 @@ class _SongInfoRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final player = context.read<BloomeePlayerCubit>().bloomeePlayer;
+    final player = context.read<BeatWavePlayerCubit>().beatwavePlayer;
     return Row(
       children: [
         Expanded(
@@ -382,7 +382,7 @@ class _DownloadButtonState extends State<_DownloadButton> {
   @override
   void initState() {
     super.initState();
-    final player = context.read<BloomeePlayerCubit>().bloomeePlayer;
+    final player = context.read<BeatWavePlayerCubit>().beatwavePlayer;
     _mediaSub = player.mediaItem.listen((mi) {
       if (mi?.id != _lastTrackId) {
         _lastTrackId = mi?.id;
@@ -448,7 +448,7 @@ class _LikeButtonState extends State<_LikeButton> {
   @override
   void initState() {
     super.initState();
-    final player = context.read<BloomeePlayerCubit>().bloomeePlayer;
+    final player = context.read<BeatWavePlayerCubit>().beatwavePlayer;
     _mediaSub = player.mediaItem.listen((mi) {
       if (mi?.id != _lastTrackId) {
         _lastTrackId = mi?.id;
@@ -481,7 +481,7 @@ class _LikeButtonState extends State<_LikeButton> {
 
   @override
   Widget build(BuildContext context) {
-    final player = context.read<BloomeePlayerCubit>().bloomeePlayer;
+    final player = context.read<BeatWavePlayerCubit>().beatwavePlayer;
     final l10n = AppLocalizations.of(context)!;
 
     return StreamBuilder<bool>(
@@ -520,7 +520,7 @@ class _PlayerProgressBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final playerCubit = context.read<BloomeePlayerCubit>();
+    final playerCubit = context.read<BeatWavePlayerCubit>();
     return RepaintBoundary(
       child: StreamBuilder<ProgressBarStreams>(
         stream: playerCubit.progressStreams,
@@ -530,7 +530,7 @@ class _PlayerProgressBar extends StatelessWidget {
             progress: data?.position ?? Duration.zero,
             total: data?.duration ?? Duration.zero,
             buffered: data?.buffered ?? Duration.zero,
-            onSeek: playerCubit.bloomeePlayer.seek,
+            onSeek: playerCubit.beatwavePlayer.seek,
             isPlaying: data?.isPlaying ?? false,
             activeAccentColor: Default_Theme.accentColor1,
             inactiveAccentColor: Default_Theme.accentColor2,
@@ -556,7 +556,7 @@ class _PlayerProgressBar extends StatelessWidget {
 }
 
 class _PlayerControlsRow extends StatelessWidget {
-  final BloomeeMusicPlayer musicPlayer;
+  final BeatWaveMusicPlayer musicPlayer;
   const _PlayerControlsRow({required this.musicPlayer});
 
   Widget _buildControlColumn({required Widget top, required Widget bottom}) {
@@ -635,7 +635,7 @@ class _LoopControl extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<LoopMode>(
-      stream: context.read<BloomeePlayerCubit>().bloomeePlayer.loopMode,
+      stream: context.read<BeatWavePlayerCubit>().beatwavePlayer.loopMode,
       builder: (context, snapshot) {
         final loopMode = snapshot.data ?? LoopMode.off;
         final l10n = AppLocalizations.of(context)!;
@@ -657,7 +657,7 @@ class _LoopControl extends StatelessWidget {
             size: 24,
           ),
           onSelected: (value) {
-            final player = context.read<BloomeePlayerCubit>().bloomeePlayer;
+            final player = context.read<BeatWavePlayerCubit>().beatwavePlayer;
             if (value == 0) player.setLoopMode(LoopMode.off);
             if (value == 1) player.setLoopMode(LoopMode.one);
             if (value == 2) player.setLoopMode(LoopMode.all);
@@ -673,7 +673,7 @@ class _ShuffleControl extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final player = context.read<BloomeePlayerCubit>().bloomeePlayer;
+    final player = context.read<BeatWavePlayerCubit>().beatwavePlayer;
     return StreamBuilder<bool>(
       stream: player.shuffleMode,
       builder: (context, snapshot) {
@@ -698,7 +698,7 @@ class _ExternalLinkControl extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final player = context.read<BloomeePlayerCubit>().bloomeePlayer;
+    final player = context.read<BeatWavePlayerCubit>().beatwavePlayer;
     return IconButton(
       icon: const Icon(MingCute.external_link_line,
           color: Default_Theme.primaryColor1, size: 24),
@@ -720,7 +720,7 @@ class _PlayPauseButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final musicPlayer = context.read<BloomeePlayerCubit>().bloomeePlayer;
+    final musicPlayer = context.read<BeatWavePlayerCubit>().beatwavePlayer;
     return BlocBuilder<MiniPlayerCubit, MiniPlayerState>(
       builder: (context, state) {
         Widget child;
@@ -798,7 +798,7 @@ class _AmbientImgShadowWidgetState extends State<AmbientImgShadowWidget> {
   @override
   void initState() {
     super.initState();
-    final player = context.read<BloomeePlayerCubit>().bloomeePlayer;
+    final player = context.read<BeatWavePlayerCubit>().beatwavePlayer;
     _mediaSub = player.mediaItem.listen((mi) {
       final artUri = mi?.artUri?.toString();
       if (artUri != _lastArtUri) {

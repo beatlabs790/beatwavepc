@@ -2,7 +2,7 @@ import 'dart:developer';
 import 'package:beatwave/blocs/explore/cubit/explore_cubits.dart';
 import 'package:beatwave/blocs/internet_connectivity/cubit/connectivity_cubit.dart';
 import 'package:beatwave/blocs/lastdotfm/lastdotfm_cubit.dart';
-import 'package:beatwave/blocs/media_player/bloomee_player_cubit.dart';
+import 'package:beatwave/blocs/media_player/beatwave_player_cubit.dart';
 import 'package:beatwave/blocs/notification/notification_cubit.dart';
 import 'package:beatwave/blocs/settings_cubit/cubit/settings_cubit.dart';
 import 'package:beatwave/core/di/service_locator.dart';
@@ -214,8 +214,8 @@ class _ExploreScreenState extends State<ExploreScreen> {
                                         song: e,
                                         onTap: () {
                                           context
-                                              .read<BloomeePlayerCubit>()
-                                              .bloomeePlayer
+                                              .read<BeatWavePlayerCubit>()
+                                              .beatwavePlayer
                                               .loadPlaylist(
                                                 Playlist(
                                                   tracks: state.tracks,
@@ -259,8 +259,8 @@ class _ExploreScreenState extends State<ExploreScreen> {
                                           song: e,
                                           onTap: () {
                                             context
-                                                .read<BloomeePlayerCubit>()
-                                                .bloomeePlayer
+                                                .read<BeatWavePlayerCubit>()
+                                                .beatwavePlayer
                                                 .loadPlaylist(
                                                   Playlist(
                                                     tracks: snapshot.data!,

@@ -4,7 +4,7 @@ import 'package:beatwave/blocs/global_events/global_events_cubit.dart';
 import 'package:beatwave/core/events/global_event_bus.dart';
 import 'package:beatwave/l10n/app_localizations.dart';
 import 'package:beatwave/screens/screen/common_views/changelog_reader.dart';
-import 'package:beatwave/screens/widgets/bloomee_ui_kit/bloomee_dialog.dart';
+import 'package:beatwave/screens/widgets/beatwave_ui_kit/beatwave_dialog.dart';
 import 'package:beatwave/screens/widgets/snackbar.dart';
 import 'package:beatwave/services/plugin/plugin_event_bus.dart';
 import 'package:beatwave/src/rust/api/plugin/events.dart';
@@ -119,14 +119,14 @@ class _GlobalEventListenerState extends State<GlobalEventListener> {
             final s = state as UpdateAvailable;
             final l10n = AppLocalizations.of(dialogContext)!;
             log("Update Available: ${s.newVersion}+${s.newBuild}");
-            showBloomeeDialog(
+            showBeatWaveDialog(
               context: dialogContext,
               title: l10n.dialogUpdateAvailable,
               subtitle: l10n.updateAvailableBody(s.newVersion, s.newBuild),
               icon: Icons.system_update_rounded,
               actions: [
-                BloomeeDialogAction.text(l10n.buttonLater),
-                BloomeeDialogAction.filled(l10n.dialogUpdateNow, onPressed: () {
+                BeatWaveDialogAction.text(l10n.buttonLater),
+                BeatWaveDialogAction.filled(l10n.dialogUpdateNow, onPressed: () {
                   openURL(s.downloadUrl);
                 }),
               ],
@@ -135,12 +135,12 @@ class _GlobalEventListenerState extends State<GlobalEventListener> {
           case AlertDialogState:
             final s = state as AlertDialogState;
             final l10n = AppLocalizations.of(dialogContext)!;
-            showBloomeeDialog(
+            showBeatWaveDialog(
               context: dialogContext,
               title: s.title,
               subtitle: s.content,
               actions: [
-                BloomeeDialogAction.filled(l10n.buttonOk),
+                BeatWaveDialogAction.filled(l10n.buttonOk),
               ],
             );
             break;

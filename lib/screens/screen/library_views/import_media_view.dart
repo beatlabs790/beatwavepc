@@ -78,7 +78,7 @@ class _ImportMediaFromPlatformsViewState
                   _ImportFromBtn(
                     btnName: AppLocalizations.of(context)!.importBeatWaveFiles,
                     btnIcon: MingCute.file_import_fill,
-                    onClickFunc: () => _importBloomeeFile(context),
+                    onClickFunc: () => _importBeatWaveFile(context),
                   ),
                   const SizedBox(height: 10),
                   _ImportFromBtn(
@@ -129,9 +129,9 @@ class _ImportMediaFromPlatformsViewState
     );
   }
 
-  // ─── Import Bloomee JSON/BLM files ────────────────────────────────────────
+  // ─── Import BeatWave JSON/BLM files ────────────────────────────────────────
 
-  void _importBloomeeFile(BuildContext context) {
+  void _importBeatWaveFile(BuildContext context) {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(

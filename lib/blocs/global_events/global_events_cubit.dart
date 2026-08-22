@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:beatwave/core/constants/setting_keys.dart';
-import 'package:beatwave/services/bloomee_updater_tools.dart';
+import 'package:beatwave/services/beatwave_updater_tools.dart';
 import 'package:beatwave/services/db/dao/settings_dao.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
@@ -31,7 +31,7 @@ class GlobalEventsCubit extends Cubit<GlobalEventsState> {
         emit(UpdateAvailable(
           newVersion: updates["newVer"],
           newBuild: updates["newBuild"],
-          downloadUrl: "https://bloomee.sourceforge.io/",
+          downloadUrl: "https://beatwave.sourceforge.io/",
         ));
       }
     }

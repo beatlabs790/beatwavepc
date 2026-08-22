@@ -3,21 +3,21 @@
 import 'package:beatwave/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
-class BloomeeSwitch extends StatefulWidget {
+class BeatWaveSwitch extends StatefulWidget {
   final bool value;
   final VoidCallback onChanged;
 
-  const BloomeeSwitch({
+  const BeatWaveSwitch({
     super.key,
     required this.value,
     required this.onChanged,
   });
 
   @override
-  State<BloomeeSwitch> createState() => _BloomeeSwitchState();
+  State<BeatWaveSwitch> createState() => _BeatWaveSwitchState();
 }
 
-class _BloomeeSwitchState extends State<BloomeeSwitch> {
+class _BeatWaveSwitchState extends State<BeatWaveSwitch> {
   late bool _localValue;
 
   @override
@@ -27,7 +27,7 @@ class _BloomeeSwitchState extends State<BloomeeSwitch> {
   }
 
   @override
-  void didUpdateWidget(covariant BloomeeSwitch oldWidget) {
+  void didUpdateWidget(covariant BeatWaveSwitch oldWidget) {
     super.didUpdateWidget(oldWidget);
     // Sync with external state when the parent rebuilds with a new value.
     if (oldWidget.value != widget.value) {

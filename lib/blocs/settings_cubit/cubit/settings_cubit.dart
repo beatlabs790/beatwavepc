@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 import 'package:beatwave/core/constants/setting_keys.dart';
 import 'package:beatwave/core/constants/cache_keys.dart';
-import 'package:beatwave/repository/bloomee/settings_repository.dart';
+import 'package:beatwave/repository/beatwave/settings_repository.dart';
 import 'package:beatwave/services/player/stream_quality_selector.dart';
 import 'package:beatwave/services/db/db_provider.dart';
 import 'package:beatwave/utils/country_info.dart';

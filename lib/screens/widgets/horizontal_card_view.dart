@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:beatwave/blocs/media_player/bloomee_player_cubit.dart';
+import 'package:beatwave/blocs/media_player/beatwave_player_cubit.dart';
 import 'package:beatwave/core/models/exported.dart';
 import 'package:beatwave/core/models/media_playlist_model.dart';
 import 'package:beatwave/core/events/global_event_bus.dart';
@@ -183,7 +183,7 @@ class _HorizontalCardViewState extends State<HorizontalCardView> {
         }
         if (tracks.isEmpty) return;
         final idx = tracks.indexWhere((t) => t.id == track.id);
-        context.read<BloomeePlayerCubit>().bloomeePlayer.loadPlaylist(
+        context.read<BeatWavePlayerCubit>().beatwavePlayer.loadPlaylist(
               Playlist(tracks: tracks, title: widget.section.title),
               idx: idx >= 0 ? idx : 0,
               doPlay: true,

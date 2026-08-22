@@ -1,12 +1,12 @@
 import 'dart:developer';
 
 import 'package:beatwave/blocs/local_music/cubit/local_music_cubit.dart';
-import 'package:beatwave/blocs/media_player/bloomee_player_cubit.dart';
+import 'package:beatwave/blocs/media_player/beatwave_player_cubit.dart';
 import 'package:beatwave/core/models/exported.dart';
 import 'package:beatwave/core/models/media_playlist_model.dart';
 import 'package:beatwave/core/theme/app_theme.dart';
 import 'package:beatwave/l10n/app_localizations.dart';
-import 'package:beatwave/screens/widgets/bloomee_ui_kit/bloomee_dialog.dart';
+import 'package:beatwave/screens/widgets/beatwave_ui_kit/beatwave_dialog.dart';
 import 'package:beatwave/screens/widgets/more_bottom_sheet.dart';
 import 'package:beatwave/screens/widgets/sign_board_widget.dart';
 import 'package:beatwave/screens/widgets/snackbar.dart';
@@ -287,8 +287,8 @@ class _LocalMusicScreenState extends State<LocalMusicScreen> {
                   icon: MingCute.shuffle_line,
                   label: AppLocalizations.of(context)!.localMusicShuffle,
                   onTap: () => context
-                      .read<BloomeePlayerCubit>()
-                      .bloomeePlayer
+                      .read<BeatWavePlayerCubit>()
+                      .beatwavePlayer
                       .loadPlaylist(
                         Playlist(tracks: displayedTracks, title: 'Local Music'),
                         doPlay: true,
@@ -300,8 +300,8 @@ class _LocalMusicScreenState extends State<LocalMusicScreen> {
                   icon: MingCute.play_fill,
                   label: AppLocalizations.of(context)!.localMusicPlayAll,
                   onTap: () => context
-                      .read<BloomeePlayerCubit>()
-                      .bloomeePlayer
+                      .read<BeatWavePlayerCubit>()
+                      .beatwavePlayer
                       .loadPlaylist(
                         Playlist(tracks: displayedTracks, title: 'Local Music'),
                         doPlay: true,
@@ -383,7 +383,7 @@ class _LocalMusicScreenState extends State<LocalMusicScreen> {
                 song: track,
                 showOptions: true,
                 onTap: () {
-                  context.read<BloomeePlayerCubit>().bloomeePlayer.loadPlaylist(
+                  context.read<BeatWavePlayerCubit>().beatwavePlayer.loadPlaylist(
                         Playlist(tracks: displayedTracks, title: 'Local Music'),
                         idx: index,
                         doPlay: true,
@@ -639,7 +639,7 @@ class _DeleteConfirmDialogState extends State<_DeleteConfirmDialog> {
 
   @override
   Widget build(BuildContext context) {
-    return BloomeeDialogSurface(
+    return BeatWaveDialogSurface(
       title: AppLocalizations.of(context)!.dialogDeleteTrack,
       subtitle: AppLocalizations.of(context)!
           .dialogDeleteTrackMessage(widget.trackTitle),

@@ -1,29 +1,29 @@
-import 'package:beatwave/services/bloomee_player.dart';
+import 'package:beatwave/services/beatwave_player.dart';
 import 'package:bloc/bloc.dart';
 import 'package:rxdart/rxdart.dart';
-part 'bloomee_player_state.dart';
+part 'beatwave_player_state.dart';
 
-class BloomeePlayerCubit extends Cubit<BloomeePlayerState> {
-  final BloomeeMusicPlayer bloomeePlayer;
+class BeatWavePlayerCubit extends Cubit<BeatWavePlayerState> {
+  final BeatWaveMusicPlayer beatwavePlayer;
   late ValueStream<ProgressBarStreams> progressStreams;
 
-  BloomeePlayerCubit(this.bloomeePlayer)
-      : super(BloomeePlayerState(isReady: true)) {
-    bloomeePlayer.syncPublicState();
+  BeatWavePlayerCubit(this.beatwavePlayer)
+      : super(BeatWavePlayerState(isReady: true)) {
+    beatwavePlayer.syncPublicState();
     _setupProgressStreams();
   }
 
   void switchShowLyrics({bool? value}) {
-    emit(BloomeePlayerState(
+    emit(BeatWavePlayerState(
         isReady: true, showLyrics: value ?? !state.showLyrics));
   }
 
   void _setupProgressStreams() {
     progressStreams = Rx.combineLatest4(
-      Rx.defer(() => bloomeePlayer.engine.positionStream, reusable: true),
-      Rx.defer(() => bloomeePlayer.engine.durationStream, reusable: true),
-      Rx.defer(() => bloomeePlayer.engine.bufferedStream, reusable: true),
-      Rx.defer(() => bloomeePlayer.engine.playingStream, reusable: true),
+      Rx.defer(() => beatwavePlayer.engine.positionStream, reusable: true),
+      Rx.defer(() => beatwavePlayer.engine.durationStream, reusable: true),
+      Rx.defer(() => beatwavePlayer.engine.bufferedStream, reusable: true),
+      Rx.defer(() => beatwavePlayer.engine.playingStream, reusable: true),
       (Duration position, Duration duration, Duration buffered, bool playing) =>
           ProgressBarStreams(
         position: position,

@@ -15,8 +15,8 @@ import 'package:beatwave/blocs/search_suggestions/search_suggestion_bloc.dart';
 import 'package:beatwave/blocs/settings_cubit/cubit/settings_cubit.dart';
 import 'package:beatwave/plugins/blocs/plugin/plugin_bloc.dart';
 import 'package:beatwave/plugins/blocs/plugin/plugin_event.dart';
-import 'package:beatwave/repository/bloomee/download_repository.dart';
-import 'package:beatwave/repository/bloomee/settings_repository.dart';
+import 'package:beatwave/repository/beatwave/download_repository.dart';
+import 'package:beatwave/repository/beatwave/settings_repository.dart';
 import 'package:beatwave/services/db/dao/cache_dao.dart';
 import 'package:beatwave/services/db/dao/download_dao.dart';
 import 'package:beatwave/services/db/dao/history_dao.dart';
@@ -53,7 +53,7 @@ import 'package:beatwave/screens/screen/library_views/cubit/current_playlist_cub
 import 'package:media_kit/media_kit.dart';
 import 'package:share_handler/share_handler.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'blocs/media_player/bloomee_player_cubit.dart';
+import 'blocs/media_player/beatwave_player_cubit.dart';
 import 'package:flutter_displaymode/flutter_displaymode.dart';
 import 'package:beatwave/services/discord_service.dart';
 import 'package:beatwave/services/db/legacy/legacy_migration_service.dart'
@@ -113,7 +113,7 @@ Future<void> _handleYoutubeVideoIntent(String url) async {
 
   final track = result.track;
   if (result.status == SharedUrlResolveStatus.success && track != null) {
-    final player = await PlayerInitializer().getBloomeeMusicPlayer();
+    final player = await PlayerInitializer().getBeatWaveMusicPlayer();
     await player.updateQueueTracks([track], doPlay: true);
     SnackbarService.showMessage('Playing: ${track.title}');
     return;
@@ -142,11 +142,11 @@ Future<void> setHighRefreshRate() async {
   }
 }
 
-late BloomeePlayerCubit bloomeePlayerCubit;
+late BeatWavePlayerCubit beatwavePlayerCubit;
 Future<void> setupPlayerCubit() async {
   await setupAudioSession();
-  final player = await PlayerInitializer().getBloomeeMusicPlayer();
-  bloomeePlayerCubit = BloomeePlayerCubit(player);
+  final player = await PlayerInitializer().getBeatWaveMusicPlayer();
+  beatwavePlayerCubit = BeatWavePlayerCubit(player);
 }
 
 Future<void> main() async {
@@ -213,7 +213,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
 
   Future<void> _ensurePlayerHealthyOnResume() async {
     try {
-      final player = await PlayerInitializer().getBloomeeMusicPlayer();
+      final player = await PlayerInitializer().getBeatWaveMusicPlayer();
       if (!player.isPlayerHealthy) {
         await player.revive();
       }
@@ -274,7 +274,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
     _intentSub?.cancel();
-    bloomeePlayerCubit.close();
+    beatwavePlayerCubit.close();
     if (io.Platform.isWindows || io.Platform.isLinux || io.Platform.isMacOS) {
       DiscordService.clearPresence();
     }
@@ -345,12 +345,12 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           lazy: false,
         ),
         BlocProvider(
-          create: (context) => bloomeePlayerCubit,
+          create: (context) => beatwavePlayerCubit,
           lazy: false,
         ),
         BlocProvider(
             create: (context) =>
-                MiniPlayerCubit(playerCubit: bloomeePlayerCubit),
+                MiniPlayerCubit(playerCubit: beatwavePlayerCubit),
             lazy: true),
         BlocProvider(
           create: (context) => SettingsCubit(
@@ -366,7 +366,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         ),
         BlocProvider(
             create: (context) => TimerBloc(
-                ticker: const Ticker(), bloomeePlayer: bloomeePlayerCubit)),
+                ticker: const Ticker(), beatwavePlayer: beatwavePlayerCubit)),
         BlocProvider(
           create: (context) => ConnectivityCubit(),
           lazy: false,
@@ -406,7 +406,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         ),
         BlocProvider(
           create: (context) => LyricsCubit(
-            bloomeePlayerCubit,
+            beatwavePlayerCubit,
             lyricsDao: LyricsDAO(DBProvider.db),
             settingsDao: SettingsDAO(DBProvider.db),
             pluginService: ServiceLocator.pluginService,
@@ -414,7 +414,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         ),
         BlocProvider(
           create: (context) => LastdotfmCubit(
-            playerCubit: bloomeePlayerCubit,
+            playerCubit: beatwavePlayerCubit,
             cacheDao: CacheDAO(DBProvider.db),
             settingsDao: SettingsDAO(DBProvider.db),
             pluginService: ServiceLocator.pluginService,
@@ -452,9 +452,9 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           lazy: true,
         ),
       ],
-      child: BlocBuilder<BloomeePlayerCubit, BloomeePlayerState>(
+      child: BlocBuilder<BeatWavePlayerCubit, BeatWavePlayerState>(
         builder: (context, state) {
-          if (state is BloomeePlayerInitial) {
+          if (state is BeatWavePlayerInitial) {
             return const Center(
               child: SizedBox(
                 width: 50,

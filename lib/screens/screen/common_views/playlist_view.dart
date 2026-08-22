@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:beatwave/blocs/media_player/bloomee_player_cubit.dart';
+import 'package:beatwave/blocs/media_player/beatwave_player_cubit.dart';
 import 'package:beatwave/core/di/service_locator.dart';
 import 'package:beatwave/core/events/global_event_bus.dart';
 import 'package:beatwave/core/models/exported.dart';
@@ -282,8 +282,8 @@ class _OnlPlaylistViewState extends State<OnlPlaylistView> {
                                 context, song,
                                 showDelete: false, showSinglePlay: true),
                             onTap: () => context
-                                .read<BloomeePlayerCubit>()
-                                .bloomeePlayer
+                                .read<BeatWavePlayerCubit>()
+                                .beatwavePlayer
                                 .loadPlaylist(
                                   Playlist(
                                       tracks: tracks,
@@ -513,7 +513,7 @@ class _PlaylistHeaderContent extends StatelessWidget {
         _PremiumPlayButton(
           isEmpty: tracks.isEmpty,
           onTap: () =>
-              context.read<BloomeePlayerCubit>().bloomeePlayer.loadPlaylist(
+              context.read<BeatWavePlayerCubit>().beatwavePlayer.loadPlaylist(
                     Playlist(tracks: tracks, title: title),
                     doPlay: true,
                     idx: 0,

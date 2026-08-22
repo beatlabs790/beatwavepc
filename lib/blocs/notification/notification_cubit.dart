@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:beatwave/core/models/app_notification.dart';
-import 'package:beatwave/services/bloomee_updater_tools.dart';
+import 'package:beatwave/services/beatwave_updater_tools.dart';
 import 'package:beatwave/services/db/dao/notification_dao.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

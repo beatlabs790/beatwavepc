@@ -126,7 +126,7 @@ class About extends StatelessWidget {
                       spacing: 6,
                       children: [
                         Text(
-                          'BloomeeTunes',
+                          'BeatWave',
                           style: TextStyle(
                             fontSize: 28,
                             fontWeight: FontWeight.bold,
