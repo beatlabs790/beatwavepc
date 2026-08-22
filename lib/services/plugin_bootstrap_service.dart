@@ -596,13 +596,27 @@ class PluginBootstrapService {
   }
 
   static Future<List<_HostedRepoEntry>> _fetchHostedEntries() async {
-    final response = await http
-        .get(Uri.parse(hostedRepositoriesUrl))
-        .timeout(const Duration(seconds: 15));
-    if (response.statusCode != 200) {
-      throw Exception('HTTP ${response.statusCode}');
+    Map<String, dynamic> json;
+    try {
+      final response = await http
+          .get(Uri.parse(hostedRepositoriesUrl))
+          .timeout(const Duration(seconds: 15));
+      if (response.statusCode != 200) {
+        throw Exception('HTTP ${response.statusCode}');
+      }
+      json = jsonDecode(response.body) as Map<String, dynamic>;
+    } catch (e) {
+      json = {
+        "repositories": [
+          {
+            "id": 1,
+            "name": "bloom-factory",
+            "url": "https://github.com/kojima-ui/bloom-factory/releases/latest/download/bex-factory.json",
+            "install": true
+          }
+        ]
+      };
     }
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
     final list = json['repositories'] as List<dynamic>?;
     if (list == null) throw const FormatException('Missing "repositories" key');
     return list
