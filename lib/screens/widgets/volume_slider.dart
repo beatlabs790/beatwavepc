@@ -4,7 +4,7 @@ import 'package:beatwave/core/theme/app_theme.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:icons_plus/icons_plus.dart';
+import 'package:iconsx_plus/iconsx_plus.dart';
 
 class VolumeDragController extends StatefulWidget {
   final Widget child;

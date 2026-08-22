@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:icons_plus/icons_plus.dart';
+import 'package:iconsx_plus/iconsx_plus.dart';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:beatwave/blocs/settings_cubit/cubit/settings_cubit.dart';

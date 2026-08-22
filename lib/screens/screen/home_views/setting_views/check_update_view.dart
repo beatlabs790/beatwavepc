@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:beatwave/core/theme/app_theme.dart';
 import 'package:beatwave/utils/url_launcher.dart';
 import 'package:beatwave/l10n/app_localizations.dart';
-import 'package:icons_plus/icons_plus.dart';
+import 'package:iconsx_plus/iconsx_plus.dart';
 
 class CheckUpdateView extends StatelessWidget {
   const CheckUpdateView({super.key});

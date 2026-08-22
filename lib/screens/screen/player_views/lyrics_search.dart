@@ -18,7 +18,7 @@ import 'package:beatwave/src/rust/api/plugin/models.dart' as plugin_models;
 import 'package:beatwave/src/rust/api/plugin/types.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:icons_plus/icons_plus.dart';
+import 'package:iconsx_plus/iconsx_plus.dart';
 
 String sanitizeLyricsQueryText(String raw) {
   var value = raw.replaceAll(RegExp(r'\s+'), ' ').trim();

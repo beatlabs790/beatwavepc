@@ -5,7 +5,7 @@ import 'package:beatwave/core/models/exported.dart';
 import 'package:beatwave/screens/screen/chart/chart_view.dart';
 import 'package:beatwave/utils/load_image.dart';
 import 'package:beatwave/core/theme/app_theme.dart';
-import 'package:icons_plus/icons_plus.dart';
+import 'package:iconsx_plus/iconsx_plus.dart';
 
 /// A rich list tile for chart items with rank, trend indicator, artwork,
 /// metadata, stats, and action buttons.

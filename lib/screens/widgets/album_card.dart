@@ -4,7 +4,7 @@ import 'package:beatwave/core/theme/app_theme.dart';
 import 'package:beatwave/screens/widgets/media_metadata_links.dart';
 import 'package:beatwave/utils/load_image.dart';
 import 'package:flutter/material.dart';
-import 'package:icons_plus/icons_plus.dart';
+import 'package:iconsx_plus/iconsx_plus.dart';
 
 class AlbumCard extends StatefulWidget {
   final AlbumSummary album;

@@ -3,7 +3,7 @@ import 'package:beatwave/services/shortcut_indicator_service.dart';
 import 'package:beatwave/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:icons_plus/icons_plus.dart';
+import 'package:iconsx_plus/iconsx_plus.dart';
 import 'package:beatwave/services/player/player_engine.dart';
 
 class ShortcutIndicatorOverlay extends StatelessWidget {

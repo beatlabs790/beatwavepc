@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:beatwave/core/theme/app_theme.dart';
-import 'package:icons_plus/icons_plus.dart';
+import 'package:iconsx_plus/iconsx_plus.dart';
 
 class PlayPauseButton extends StatefulWidget {
   final double size;

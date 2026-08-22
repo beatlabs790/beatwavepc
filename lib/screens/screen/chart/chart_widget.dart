@@ -2,7 +2,7 @@
 import 'package:beatwave/core/theme/app_theme.dart';
 import 'package:beatwave/src/rust/api/plugin/models.dart';
 import 'package:flutter/material.dart';
-import 'package:icons_plus/icons_plus.dart';
+import 'package:iconsx_plus/iconsx_plus.dart';
 import 'package:beatwave/utils/load_image.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 

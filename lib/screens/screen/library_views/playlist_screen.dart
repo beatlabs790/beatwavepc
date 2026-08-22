@@ -3,7 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:icons_plus/icons_plus.dart';
+import 'package:iconsx_plus/iconsx_plus.dart';
 
 import 'package:beatwave/blocs/media_player/bloomee_player_cubit.dart';
 import 'package:beatwave/core/models/media_playlist_model.dart';

@@ -8,7 +8,7 @@ import 'package:beatwave/src/rust/api/plugin/models.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:beatwave/l10n/app_localizations.dart';
-import 'package:icons_plus/icons_plus.dart';
+import 'package:iconsx_plus/iconsx_plus.dart';
 
 Future<void> showSmartReplaceDialog(BuildContext context, Track track) {
   return showDialog<void>(

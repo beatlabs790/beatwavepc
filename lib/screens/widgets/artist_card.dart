@@ -4,7 +4,7 @@ import 'package:beatwave/screens/screen/common_views/artist_view.dart';
 import 'package:beatwave/core/theme/app_theme.dart';
 import 'package:beatwave/utils/load_image.dart';
 import 'package:flutter/material.dart';
-import 'package:icons_plus/icons_plus.dart';
+import 'package:iconsx_plus/iconsx_plus.dart';
 
 class ArtistCard extends StatefulWidget {
   final ArtistSummary artist;

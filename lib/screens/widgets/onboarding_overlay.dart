@@ -8,7 +8,7 @@ import 'package:beatwave/services/db/db_provider.dart';
 import 'package:beatwave/services/onboarding_service.dart';
 import 'package:beatwave/utils/country_info.dart';
 import 'package:flutter/material.dart';
-import 'package:icons_plus/icons_plus.dart';
+import 'package:iconsx_plus/iconsx_plus.dart';
 
 class OnboardingOverlay extends StatefulWidget {
   final VoidCallback onComplete;

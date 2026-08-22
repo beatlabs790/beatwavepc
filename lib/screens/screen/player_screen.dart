@@ -17,7 +17,7 @@ import 'package:audio_service/audio_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:beatwave/l10n/app_localizations.dart';
-import 'package:icons_plus/icons_plus.dart';
+import 'package:iconsx_plus/iconsx_plus.dart';
 import 'package:beatwave/services/player/player_engine.dart';
 import 'package:beatwave/screens/widgets/like_widget.dart';
 import 'package:beatwave/screens/widgets/play_pause_widget.dart';

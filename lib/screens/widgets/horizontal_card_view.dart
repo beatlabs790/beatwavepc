@@ -11,7 +11,7 @@ import 'package:beatwave/screens/widgets/square_card.dart';
 import 'package:beatwave/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:icons_plus/icons_plus.dart';
+import 'package:iconsx_plus/iconsx_plus.dart';
 
 /// Displays a horizontal scrollable card view for a home [Section].
 class HorizontalCardView extends StatefulWidget {

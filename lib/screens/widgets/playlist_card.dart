@@ -3,7 +3,7 @@ import 'package:beatwave/screens/screen/common_views/playlist_view.dart';
 import 'package:beatwave/core/theme/app_theme.dart';
 import 'package:beatwave/utils/load_image.dart';
 import 'package:flutter/material.dart';
-import 'package:icons_plus/icons_plus.dart';
+import 'package:iconsx_plus/iconsx_plus.dart';
 
 class PlaylistCard extends StatefulWidget {
   final PlaylistSummary playlist;

@@ -21,7 +21,7 @@ import 'package:beatwave/screens/widgets/create_playlist_bottomsheet.dart';
 import 'package:beatwave/screens/widgets/libitem_tile.dart';
 import 'package:beatwave/core/theme/app_theme.dart';
 import 'package:beatwave/l10n/app_localizations.dart';
-import 'package:icons_plus/icons_plus.dart';
+import 'package:iconsx_plus/iconsx_plus.dart';
 import 'package:beatwave/blocs/library/search_cubit/library_search_cubit.dart';
 import 'package:beatwave/core/models/library_search_result.dart';
 import 'package:beatwave/screens/widgets/animated_list_item.dart';

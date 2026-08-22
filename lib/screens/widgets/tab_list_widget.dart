@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:beatwave/screens/widgets/paging_scroll.dart';
 import 'package:flutter/material.dart';
-import 'package:icons_plus/icons_plus.dart';
+import 'package:iconsx_plus/iconsx_plus.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 import 'package:beatwave/core/theme/app_theme.dart';

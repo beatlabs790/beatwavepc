@@ -7,7 +7,7 @@ import 'package:beatwave/screens/screen/player_views/equalizer_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:beatwave/l10n/app_localizations.dart';
-import 'package:icons_plus/icons_plus.dart';
+import 'package:iconsx_plus/iconsx_plus.dart';
 
 class PlayerSettings extends StatelessWidget {
   const PlayerSettings({super.key});

@@ -19,7 +19,7 @@ import 'package:beatwave/core/theme/app_theme.dart';
 import 'package:beatwave/utils/load_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:icons_plus/icons_plus.dart';
+import 'package:iconsx_plus/iconsx_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class OnlPlaylistView extends StatefulWidget {

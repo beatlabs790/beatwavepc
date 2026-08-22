@@ -13,7 +13,7 @@ import 'package:beatwave/screens/screen/plugin_manager_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:beatwave/core/theme/app_theme.dart';
 import 'package:beatwave/l10n/app_localizations.dart';
-import 'package:icons_plus/icons_plus.dart';
+import 'package:iconsx_plus/iconsx_plus.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});

@@ -25,7 +25,7 @@ import 'package:beatwave/screens/screen/home_views/timer_view.dart';
 import 'package:beatwave/core/theme/app_theme.dart';
 import 'package:beatwave/l10n/app_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:icons_plus/icons_plus.dart';
+import 'package:iconsx_plus/iconsx_plus.dart';
 import 'chart/carousal_widget.dart';
 import '../widgets/horizontal_card_view.dart';
 import '../widgets/tab_list_widget.dart';
